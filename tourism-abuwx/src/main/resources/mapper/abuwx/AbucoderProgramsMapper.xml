@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.AbucoderProgramsMapper">
+    
+    <resultMap type="AbucoderPrograms" id="AbucoderProgramsResult">
+        <result property="id"    column="id"    />
+        <result property="programName"    column="program_name"    />
+        <result property="programTag"    column="program_tag"    />
+        <result property="programImg"    column="program_img"    />
+        <result property="programContent"    column="program_content"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectAbucoderProgramsVo">
+        select id, program_name, program_tag, program_img, program_content, create_by, create_time, update_by, update_time, remark from abucoder_programs
+    </sql>
+
+    <select id="selectAbucoderProgramsList" parameterType="AbucoderPrograms" resultMap="AbucoderProgramsResult">
+        <include refid="selectAbucoderProgramsVo"/>
+        <where>  
+            <if test="programName != null  and programName != ''"> and program_name like concat('%', #{programName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectAbucoderProgramsById" parameterType="Long" resultMap="AbucoderProgramsResult">
+        <include refid="selectAbucoderProgramsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertAbucoderPrograms" parameterType="AbucoderPrograms" useGeneratedKeys="true" keyProperty="id">
+        insert into abucoder_programs
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="programName != null">program_name,</if>
+            <if test="programTag != null">program_tag,</if>
+            <if test="programImg != null">program_img,</if>
+            <if test="programContent != null">program_content,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="programName != null">#{programName},</if>
+            <if test="programTag != null">#{programTag},</if>
+            <if test="programImg != null">#{programImg},</if>
+            <if test="programContent != null">#{programContent},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAbucoderPrograms" parameterType="AbucoderPrograms">
+        update abucoder_programs
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="programName != null">program_name = #{programName},</if>
+            <if test="programTag != null">program_tag = #{programTag},</if>
+            <if test="programImg != null">program_img = #{programImg},</if>
+            <if test="programContent != null">program_content = #{programContent},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAbucoderProgramsById" parameterType="Long">
+        delete from abucoder_programs where id = #{id}
+    </delete>
+
+    <delete id="deleteAbucoderProgramsByIds" parameterType="String">
+        delete from abucoder_programs where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

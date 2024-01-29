@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tourism</artifactId>
+        <groupId>com.tourism</groupId>
+        <version>3.8.2</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tourism-abuwx</artifactId>
+
+    <description>微信小程序</description>
+
+    <dependencies>
+        <!-- 通用工具 -->
+        <dependency>
+            <groupId>com.tourism</groupId>
+            <artifactId>tourism-common</artifactId>
+        </dependency>
+        <!-- 通用工具 -->
+        <dependency>
+            <groupId>com.tourism</groupId>
+            <artifactId>tourism-system</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.tourism</groupId>
+            <artifactId>tourism-framework</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

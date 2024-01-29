@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.AbucoderBannersMapper">
+    
+    <resultMap type="AbucoderBanners" id="AbucoderBannersResult">
+        <result property="id"    column="id"    />
+        <result property="bannerTitle"    column="banner_title"    />
+        <result property="bannerUrl"    column="banner_url"    />
+        <result property="bannerImg"    column="banner_img"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectAbucoderBannersVo">
+        select id, banner_title, banner_url, banner_img, create_by, create_time, update_by, update_time, remark from abucoder_banners
+    </sql>
+
+    <select id="selectAbucoderBannersList" parameterType="AbucoderBanners" resultMap="AbucoderBannersResult">
+        <include refid="selectAbucoderBannersVo"/>
+        <where>  
+        </where>
+    </select>
+    
+    <select id="selectAbucoderBannersById" parameterType="Long" resultMap="AbucoderBannersResult">
+        <include refid="selectAbucoderBannersVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertAbucoderBanners" parameterType="AbucoderBanners" useGeneratedKeys="true" keyProperty="id">
+        insert into abucoder_banners
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bannerTitle != null">banner_title,</if>
+            <if test="bannerUrl != null">banner_url,</if>
+            <if test="bannerImg != null">banner_img,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bannerTitle != null">#{bannerTitle},</if>
+            <if test="bannerUrl != null">#{bannerUrl},</if>
+            <if test="bannerImg != null">#{bannerImg},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAbucoderBanners" parameterType="AbucoderBanners">
+        update abucoder_banners
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="bannerTitle != null">banner_title = #{bannerTitle},</if>
+            <if test="bannerUrl != null">banner_url = #{bannerUrl},</if>
+            <if test="bannerImg != null">banner_img = #{bannerImg},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAbucoderBannersById" parameterType="Long">
+        delete from abucoder_banners where id = #{id}
+    </delete>
+
+    <delete id="deleteAbucoderBannersByIds" parameterType="String">
+        delete from abucoder_banners where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

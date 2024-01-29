@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.AbucoderWxuserMapper">
+    
+    <resultMap type="AbucoderWxuser" id="AbucoderWxuserResult">
+        <result property="id"    column="id"    />
+        <result property="nickname"    column="nickname"    />
+        <result property="avatar"    column="avatar"    />
+        <result property="openid"    column="openid"    />
+        <result property="gender"    column="gender"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectAbucoderWxuserVo">
+        select id, nickname, avatar, openid, gender, create_by, create_time, update_by, update_time, remark from abucoder_wxuser
+    </sql>
+
+    <select id="selectAbucoderWxuserList" parameterType="AbucoderWxuser" resultMap="AbucoderWxuserResult">
+        <include refid="selectAbucoderWxuserVo"/>
+        <where>  
+            <if test="openid != null  and openid != ''"> and openid = #{openid}</if>
+            <if test="gender != null "> and gender = #{gender}</if>
+        </where>
+    </select>
+    
+    <select id="selectAbucoderWxuserById" parameterType="Long" resultMap="AbucoderWxuserResult">
+        <include refid="selectAbucoderWxuserVo"/>
+        where id = #{id}
+    </select>
+    <select id="selectAbucoderWxuserOpenID" resultMap="AbucoderWxuserResult">
+        <include refid="selectAbucoderWxuserVo"/>
+        where openid = #{openid}
+    </select>
+
+    <insert id="insertAbucoderWxuser" parameterType="AbucoderWxuser" useGeneratedKeys="true" keyProperty="id">
+        insert into abucoder_wxuser
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="nickname != null">nickname,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="openid != null">openid,</if>
+            <if test="gender != null">gender,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="nickname != null">#{nickname},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="openid != null">#{openid},</if>
+            <if test="gender != null">#{gender},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAbucoderWxuser" parameterType="AbucoderWxuser">
+        update abucoder_wxuser
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="nickname != null">nickname = #{nickname},</if>
+            <if test="avatar != null">avatar = #{avatar},</if>
+            <if test="openid != null">openid = #{openid},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAbucoderWxuserById" parameterType="Long">
+        delete from abucoder_wxuser where id = #{id}
+    </delete>
+
+    <delete id="deleteAbucoderWxuserByIds" parameterType="String">
+        delete from abucoder_wxuser where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

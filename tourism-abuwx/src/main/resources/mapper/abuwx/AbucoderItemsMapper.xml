@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.AbucoderItemsMapper">
+    
+    <resultMap type="AbucoderItems" id="AbucoderItemsResult">
+        <result property="id"    column="id"    />
+        <result property="itemName"    column="item_name"    />
+        <result property="itemDesc"    column="item_desc"    />
+        <result property="itemContent"    column="item_content"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectAbucoderItemsVo">
+        select id, item_name, item_desc, item_content, create_by, create_time, update_by, update_time, remark from abucoder_items
+    </sql>
+
+    <select id="selectAbucoderItemsList" parameterType="AbucoderItems" resultMap="AbucoderItemsResult">
+        <include refid="selectAbucoderItemsVo"/>
+        <where>  
+            <if test="itemName != null  and itemName != ''"> and item_name like concat('%', #{itemName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectAbucoderItemsById" parameterType="Long" resultMap="AbucoderItemsResult">
+        <include refid="selectAbucoderItemsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertAbucoderItems" parameterType="AbucoderItems" useGeneratedKeys="true" keyProperty="id">
+        insert into abucoder_items
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="itemName != null">item_name,</if>
+            <if test="itemDesc != null">item_desc,</if>
+            <if test="itemContent != null">item_content,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="itemName != null">#{itemName},</if>
+            <if test="itemDesc != null">#{itemDesc},</if>
+            <if test="itemContent != null">#{itemContent},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateAbucoderItems" parameterType="AbucoderItems">
+        update abucoder_items
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="itemName != null">item_name = #{itemName},</if>
+            <if test="itemDesc != null">item_desc = #{itemDesc},</if>
+            <if test="itemContent != null">item_content = #{itemContent},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAbucoderItemsById" parameterType="Long">
+        delete from abucoder_items where id = #{id}
+    </delete>
+
+    <delete id="deleteAbucoderItemsByIds" parameterType="String">
+        delete from abucoder_items where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
