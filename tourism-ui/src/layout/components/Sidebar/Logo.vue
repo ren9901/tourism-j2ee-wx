@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      title: '阿卜小程序管理系统',
+      title: '小程序管理系统',
       logo: logoImg
     }
   }
