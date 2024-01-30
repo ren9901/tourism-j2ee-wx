@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.VxJingdianTableMapper">
+    
+    <resultMap type="VxJingdianTable" id="VxJingdianTableResult">
+        <result property="id"    column="ID"    />
+        <result property="name"    column="NAME"    />
+        <result property="indexUrl"    column="INDEX_URL"    />
+        <result property="dznum"    column="DZNUM"    />
+        <result property="price"    column="PRICE"    />
+        <result property="remark"    column="REMARK"    />
+        <result property="collectNum"    column="COLLECT_NUM"    />
+        <result property="createBy"    column="CREATE_BY"    />
+        <result property="createTime"    column="CREATE_TIME"    />
+        <result property="updateBy"    column="UPDATE_BY"    />
+        <result property="updateTime"    column="UPDATE_TIME"    />
+        <result property="kucunNum"    column="KUCUN_NUM"    />
+    </resultMap>
+
+    <sql id="selectVxJingdianTableVo">
+        select ID, NAME, INDEX_URL, DZNUM, PRICE, REMARK, COLLECT_NUM, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, KUCUN_NUM from VX_JINGDIAN_TABLE
+    </sql>
+
+    <select id="selectVxJingdianTableList" parameterType="VxJingdianTable" resultMap="VxJingdianTableResult">
+        <include refid="selectVxJingdianTableVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and NAME like concat('%', #{name}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectVxJingdianTableById" parameterType="Long" resultMap="VxJingdianTableResult">
+        <include refid="selectVxJingdianTableVo"/>
+        where ID = #{id}
+    </select>
+        
+    <insert id="insertVxJingdianTable" parameterType="VxJingdianTable">
+        insert into VX_JINGDIAN_TABLE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">ID,</if>
+            <if test="name != null">NAME,</if>
+            <if test="indexUrl != null">INDEX_URL,</if>
+            <if test="dznum != null">DZNUM,</if>
+            <if test="price != null">PRICE,</if>
+            <if test="remark != null">REMARK,</if>
+            <if test="collectNum != null">COLLECT_NUM,</if>
+            <if test="createBy != null">CREATE_BY,</if>
+            <if test="createTime != null">CREATE_TIME,</if>
+            <if test="updateBy != null">UPDATE_BY,</if>
+            <if test="updateTime != null">UPDATE_TIME,</if>
+            <if test="kucunNum != null">KUCUN_NUM,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="indexUrl != null">#{indexUrl},</if>
+            <if test="dznum != null">#{dznum},</if>
+            <if test="price != null">#{price},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="collectNum != null">#{collectNum},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="kucunNum != null">#{kucunNum},</if>
+         </trim>
+    </insert>
+
+    <update id="updateVxJingdianTable" parameterType="VxJingdianTable">
+        update VX_JINGDIAN_TABLE
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">NAME = #{name},</if>
+            <if test="indexUrl != null">INDEX_URL = #{indexUrl},</if>
+            <if test="dznum != null">DZNUM = #{dznum},</if>
+            <if test="price != null">PRICE = #{price},</if>
+            <if test="remark != null">REMARK = #{remark},</if>
+            <if test="collectNum != null">COLLECT_NUM = #{collectNum},</if>
+            <if test="createBy != null">CREATE_BY = #{createBy},</if>
+            <if test="createTime != null">CREATE_TIME = #{createTime},</if>
+            <if test="updateBy != null">UPDATE_BY = #{updateBy},</if>
+            <if test="updateTime != null">UPDATE_TIME = #{updateTime},</if>
+            <if test="kucunNum != null">KUCUN_NUM = #{kucunNum},</if>
+        </trim>
+        where ID = #{id}
+    </update>
+
+    <delete id="deleteVxJingdianTableById" parameterType="Long">
+        delete from VX_JINGDIAN_TABLE where ID = #{id}
+    </delete>
+
+    <delete id="deleteVxJingdianTableByIds" parameterType="String">
+        delete from VX_JINGDIAN_TABLE where ID in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

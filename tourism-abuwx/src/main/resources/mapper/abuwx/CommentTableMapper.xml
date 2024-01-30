@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.CommentTableMapper">
+    
+    <resultMap type="CommentTable" id="CommentTableResult">
+        <result property="id"    column="ID"    />
+        <result property="jingdianId"    column="jingdian_id"    />
+        <result property="wxuserId"    column="wxuser_id"    />
+        <result property="content"    column="content"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectCommentTableVo">
+        select ID, jingdian_id, wxuser_id, content, create_by, create_time, update_by, update_time, remark from comment_table
+    </sql>
+
+    <select id="selectCommentTableList" parameterType="CommentTable" resultMap="CommentTableResult">
+        <include refid="selectCommentTableVo"/>
+        <where>  
+        </where>
+    </select>
+    
+    <select id="selectCommentTableById" parameterType="Long" resultMap="CommentTableResult">
+        <include refid="selectCommentTableVo"/>
+        where ID = #{id}
+    </select>
+        
+    <insert id="insertCommentTable" parameterType="CommentTable" useGeneratedKeys="true" keyProperty="id">
+        insert into comment_table
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="jingdianId != null">jingdian_id,</if>
+            <if test="wxuserId != null">wxuser_id,</if>
+            <if test="content != null">content,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="jingdianId != null">#{jingdianId},</if>
+            <if test="wxuserId != null">#{wxuserId},</if>
+            <if test="content != null">#{content},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCommentTable" parameterType="CommentTable">
+        update comment_table
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="jingdianId != null">jingdian_id = #{jingdianId},</if>
+            <if test="wxuserId != null">wxuser_id = #{wxuserId},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where ID = #{id}
+    </update>
+
+    <delete id="deleteCommentTableById" parameterType="Long">
+        delete from comment_table where ID = #{id}
+    </delete>
+
+    <delete id="deleteCommentTableByIds" parameterType="String">
+        delete from comment_table where ID in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

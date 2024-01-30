@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tourism.abuwx.mapper.WxuserCollentMapper">
+    
+    <resultMap type="WxuserCollent" id="WxuserCollentResult">
+        <result property="wxuserId"    column="wxuser_id"    />
+        <result property="jingdianId"    column="jingdian_id"    />
+    </resultMap>
+
+    <sql id="selectWxuserCollentVo">
+        select wxuser_id, jingdian_id from wxuser_collent
+    </sql>
+
+    <select id="selectWxuserCollentList" parameterType="WxuserCollent" resultMap="WxuserCollentResult">
+        <include refid="selectWxuserCollentVo"/>
+        <where>  
+        </where>
+    </select>
+    
+    <select id="selectWxuserCollentByWxuserId" parameterType="Long" resultMap="WxuserCollentResult">
+        <include refid="selectWxuserCollentVo"/>
+        where wxuser_id = #{wxuserId}
+    </select>
+        
+    <insert id="insertWxuserCollent" parameterType="WxuserCollent">
+        insert into wxuser_collent
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="wxuserId != null">wxuser_id,</if>
+            <if test="jingdianId != null">jingdian_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="wxuserId != null">#{wxuserId},</if>
+            <if test="jingdianId != null">#{jingdianId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateWxuserCollent" parameterType="WxuserCollent">
+        update wxuser_collent
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="jingdianId != null">jingdian_id = #{jingdianId},</if>
+        </trim>
+        where wxuser_id = #{wxuserId}
+    </update>
+
+    <delete id="deleteWxuserCollentByWxuserId" parameterType="Long">
+        delete from wxuser_collent where wxuser_id = #{wxuserId}
+    </delete>
+
+    <delete id="deleteWxuserCollentByWxuserIds" parameterType="String">
+        delete from wxuser_collent where wxuser_id in 
+        <foreach item="wxuserId" collection="array" open="(" separator="," close=")">
+            #{wxuserId}
+        </foreach>
+    </delete>
+</mapper>
