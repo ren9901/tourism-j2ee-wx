@@ -1,5 +1,19 @@
 <template>
 	<view class="content">
+		<view class="message-box" @click="noticeMore">
+			<view class="page-section swiper">
+				<view class="page-section-spacing">
+					<swiper style="height: 120rpx;" class="swiper" vertical="ture" circular="true"
+						indicator-dots='false' indicator-color="rgba(0,0,0,.0)" indicator-active-color="rgba(0,0,0,.0)"
+						autoplay="true" interval="4000">
+						<swiper-item class="swiper-list" v-for="(item, index) in messageData" :key="index">
+							<view class="message-tltle">{{item.noticeTitle}}</view>
+							<view class="message-content"><span>感谢</span>{{item.noticeDesc}}</view>
+						</swiper-item>
+					</swiper>
+				</view>
+			</view>
+		</view>
 		<!-- banner图 -->
 		<view class="uni-padding-wrap">
 			<view class="page-section swiper">
@@ -15,66 +29,35 @@
 				</view>
 			</view>
 		</view>
-		<view class="message-box" @click="noticeMore">
-			<view class="page-section swiper">
-				<view class="page-section-spacing">
-					<swiper style="height: 120rpx;" class="swiper" vertical="ture" circular="true"
-						indicator-dots='false' indicator-color="rgba(0,0,0,.0)" indicator-active-color="rgba(0,0,0,.0)"
-						autoplay="true" interval="4000">
-						<swiper-item class="swiper-list" v-for="(item, index) in messageData" :key="index">
-							<view class="message-tltle">{{item.noticeTitle}}</view>
-							<view class="message-content"><span>感谢</span>{{item.noticeDesc}}</view>
-						</swiper-item>
-					</swiper>
-				</view>
-			</view>
-		</view>
+		
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">推荐小程序</text>
-				<text class="text-ABC text-blue">my app</text>
-			</view>
-			<view class="action" @click="gomoreapp"><text class="text-lg text-grey text-shadow" >更多</text></view>
-		</view>
-		<ad :unit-id="adlist.bannerAd"></ad>
-		<view class="skill-sequence-panel-content-wrapper">
-			<!--左边虚化-->
-			<view class="hide-content-box hide-content-box-left"></view>
-			<!--右边虚化-->
-			<view class="hide-content-box hide-content-box-right"></view>
-			<scroll-view scroll-x="true" class="kite-classify-scroll">
-				<view class="kite-classify-cell shadow" v-for="(item, index) in curriculum" :key="index">
-					<view :class="'nav-li bg-index' + (index + 1)">
-						<view class="nav-name">{{ item.itemName }}</view>
-					</view>
-					<view class="nav-content">{{ item.itemDesc }}</view>
-					<view @click="goDeatil" class="nav-btn shadow" :class="'bg-index' + (index + 1)">立即访问</view>
-				</view>
-			</scroll-view>
-		</view>
-		<view class="cu-bar bg-white margin-top-xs">
-			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">开源项目推荐</text>
-				<text class="text-ABC text-blue">curriculum</text>
+				<text class="text-xl text-bold text-blue text-shadow">热门景点推荐</text>
+				<text class="text-ABC text-blue">recommend</text>
 			</view>
 			<view class="action" @click="goMore"><text class="text-lg text-grey text-shadow">更多</text></view>
 		</view>
-		<ad :unit-id="adlist.videoAd" ad-type="video" ad-theme="white"></ad>
 		<view class="cu-card case no-card">
 			<view @click="goProject(item.id)" class="cu-item shadow" v-for="(item, index) in projectList" :key="index">
 				<view class="image">
 					<image :src="item.programImg" mode="widthFix"></image>
-					<view class="cu-tag bg-gradual-orange">{{ item.programTag }}</view>
 					<view class="cu-bar bg-shadeBottom">
 						<text class="text-cut">{{ item.programName }}</text>
+						<text class="text-cut">点赞数：{{ item.dzNum }}  收藏数：{{item.collectNum}}</text>
 					</view>
 				</view>
+				<view class="imageDetail">
+					<view class="imageDetail-text">景点简介：{{item.remark}}</view>
+				</view>
+				<view class="imageKc">
+					<view class="imageDetail-text">门票价格：{{item.price}} ¥</view>
+					<view class="imageDetail-text">库存数：{{item.kucunNum}}</view>
+				</view>
+				
 			</view>
 		</view>
-		<ad-custom :unit-id="adlist.gridAd"></ad-custom>
-		<view class="copyright">
-			<text>AbuCoder版权所有</text>
-		</view>
+		<!-- <ad-custom :unit-id="adlist.gridAd"></ad-custom> -->
+		
 	</view>
 </template>
 
@@ -84,43 +67,9 @@
 			return {
 				adlist:this.myad()[0],
 				bannerList: [],
-				messageData: [
-					{
-						noticeTitle: '「AbuCoder」感谢前段铺子前段框架！',
-						tag: '感谢',
-						noticeContent: '感谢Uview开源框架'
-					},
-					{
-						noticeTitle: '「AbuCoder」感谢若依开发框架！',
-						tag: '感谢',
-						noticeContent: '第一次做插件，感谢大家的支持哦~'
-					},
-					{
-						noticeTitle: '「AbuCoder」感谢ColorUI前段框架！',
-						tag: '感谢',
-						noticeContent: '第一次做插件，感谢大家的支持哦~'
-					}
-				],
-				curriculum: [{
-						itemName: '专业证件照',
-						itemDesc: '基于uniapp的专业证件照制作小程序，欢迎访问...'
-					},
-					{
-						itemName: '极速去水印',
-						itemDesc: '基于uniapp的专业极速去水印助手小程序，欢迎访问...'
-					},
-					{
-						itemName: '证件照（民族语言版）',
-						itemDesc: '基于uniapp的专业证件照制作小程序民族语言版...'
-					},
-				],
-				projectList:[
-					{
-						programImg:'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-						programTag:'Gitee开源',
-						programName:'若依开源框架推荐'
-					}
-				]
+				messageData: [],
+				curriculum: [],
+				projectList:[]
 			}
 		},
 		onLoad() {
@@ -189,7 +138,7 @@
 				})
 			},
 			getProgrammslist(){
-				this.request('loadProgramms', 'GET').then(res=>{
+				this.request('jdList', 'GET').then(res=>{
 					console.log("res:",res)
 					// if(res){
 					// 	this.projectList = res.data
@@ -198,10 +147,14 @@
 						let mydata = {}
 						 for (var i = 0; i < res.data.length; i++) {
 							mydata[i] = {};
-							mydata[i]['programImg'] = 'http://localhost:8083' + res.data[i].programImg;
+							mydata[i]['programImg'] = 'http://localhost:8083' + res.data[i].indexUrl;
 							mydata[i]['id'] =res.data[i].id
-							mydata[i]['programName'] = res.data[i].programName
-							mydata[i]['programTag'] = res.data[i].programTag
+							mydata[i]['programName'] = res.data[i].name
+							mydata[i]['dzNum'] = res.data[i].dznum
+							mydata[i]['collectNum'] = res.data[i].collectNum
+							mydata[i]['remark'] = res.data[i].remark
+							mydata[i]['price'] = res.data[i].price
+							mydata[i]['kucunNum'] = res.data[i].kucunNum
 						}
 						// console.log(mydata)
 						this.projectList = mydata

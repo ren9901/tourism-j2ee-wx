@@ -3828,7 +3828,25 @@ scroll-view.cu-steps .cu-item {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	font-size: 32upx;
 }
+
+.imageDetail{
+	display: flex;
+	width: 100vw;
+}
+.imageDetail-text {
+	white-space: normal; /* 或者 white-space: break-spaces; */
+	word-wrap: break-word;
+	padding: 10upx 30upx 10upx 40upx;
+	font-size: 32upx;
+}
+.imageKc{
+	display: flex;
+	width: 100vw;
+	justify-content: space-between;
+}
+
 
 .text-bold {
 	font-weight: bold;

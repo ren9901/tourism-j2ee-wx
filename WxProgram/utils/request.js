@@ -1,5 +1,4 @@
 /**
- * author：AbuCoder
  * date:2022年5月22日13:53:23
  * 封装的异步请求处理函数
  * 需要在main.js引入与挂载 import request from 'utils/request.js'  //引入异步请求函数
