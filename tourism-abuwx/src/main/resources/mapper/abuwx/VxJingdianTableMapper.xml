@@ -23,13 +23,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select ID, NAME, INDEX_URL, DZNUM, PRICE, REMARK, COLLECT_NUM, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, KUCUN_NUM from VX_JINGDIAN_TABLE
     </sql>
 
+    <select id="selectVxJingdianTableByWxuserId" parameterType="Long" resultMap="VxJingdianTableResult">
+        select jd.*
+        from VX_JINGDIAN_TABLE as jd
+        left join WXUSER_COLLENT as wc
+            on wc.jingdian_id = jd.ID
+        WHERE
+            wc.wxuser_id = #{wxuserId}
+    </select>
+
+
     <select id="selectVxJingdianTableList" parameterType="VxJingdianTable" resultMap="VxJingdianTableResult">
         <include refid="selectVxJingdianTableVo"/>
         <where>  
             <if test="name != null  and name != ''"> and NAME like concat('%', #{name}, '%')</if>
         </where>
     </select>
-    
+
     <select id="selectVxJingdianTableById" parameterType="Long" resultMap="VxJingdianTableResult">
         <include refid="selectVxJingdianTableVo"/>
         where ID = #{id}
@@ -66,6 +76,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="kucunNum != null">#{kucunNum},</if>
          </trim>
     </insert>
+
+    <update id="operateDzVxJingdianTable" parameterType="VxJingdianTable">
+        update VX_JINGDIAN_TABLE
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">NAME = #{name},</if>
+            <if test="indexUrl != null">INDEX_URL = #{indexUrl},</if>
+            <if test="dznum != null">DZNUM = #{dznum},</if>
+            <if test="price != null">PRICE = #{price},</if>
+            <if test="remark != null">REMARK = #{remark},</if>
+            <if test="collectNum != null">COLLECT_NUM = #{collectNum},</if>
+            <if test="createBy != null">CREATE_BY = #{createBy},</if>
+            <if test="createTime != null">CREATE_TIME = #{createTime},</if>
+            <if test="updateBy != null">UPDATE_BY = #{updateBy},</if>
+            <if test="updateTime != null">UPDATE_TIME = #{updateTime},</if>
+            <if test="kucunNum != null">KUCUN_NUM = #{kucunNum},</if>
+        </trim>
+        where ID = #{id}
+    </update>
 
     <update id="updateVxJingdianTable" parameterType="VxJingdianTable">
         update VX_JINGDIAN_TABLE

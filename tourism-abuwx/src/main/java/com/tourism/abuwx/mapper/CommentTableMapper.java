@@ -58,4 +58,6 @@ public interface CommentTableMapper
      * @return 结果
      */
     public int deleteCommentTableByIds(Long[] ids);
+
+    List<CommentTable> getCommentListByJdID(Long jdid);
 }

@@ -7,7 +7,7 @@ import com.tourism.abuwx.domain.OrderTable;
  * 订单Service接口
  * 
  * @author tourism
- * @date 2024-01-30
+ * @date 2024-01-31
  */
 public interface IOrderTableService 
 {

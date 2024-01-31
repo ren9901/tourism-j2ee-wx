@@ -43,6 +43,8 @@ public interface VxJingdianTableMapper
      */
     public int updateVxJingdianTable(VxJingdianTable vxJingdianTable);
 
+    public int operateDzVxJingdianTable(VxJingdianTable vxJingdianTable);
+
     /**
      * 删除景区表
      * 
@@ -58,4 +60,9 @@ public interface VxJingdianTableMapper
      * @return 结果
      */
     public int deleteVxJingdianTableByIds(Long[] ids);
+
+    /**
+     * 获取用户收藏景区列表
+     */
+    public List<VxJingdianTable> selectVxJingdianTableByWxuserId(Long wxuserId);
 }

@@ -58,4 +58,9 @@ public interface ICommentTableService
      * @return 结果
      */
     public int deleteCommentTableById(Long id);
+
+    /**
+     * 查询评论内容通过景点id
+     */
+    List<CommentTable> getCommentListByJdID(Long jdid);
 }

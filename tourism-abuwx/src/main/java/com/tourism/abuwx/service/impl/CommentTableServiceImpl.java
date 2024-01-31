@@ -93,4 +93,9 @@ public class CommentTableServiceImpl implements ICommentTableService
     {
         return commentTableMapper.deleteCommentTableById(id);
     }
+
+    @Override
+    public List<CommentTable> getCommentListByJdID(Long jdid) {
+        return commentTableMapper.getCommentListByJdID(jdid);
+    }
 }

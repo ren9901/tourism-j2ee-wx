@@ -43,6 +43,9 @@ public interface IVxJingdianTableService
      */
     public int updateVxJingdianTable(VxJingdianTable vxJingdianTable);
 
+    public int operateDzVxJingdianTable(VxJingdianTable vxJingdianTable);
+
+    public int operateScVxJingdianTable(VxJingdianTable vxJingdianTable, Long wxuserId);
     /**
      * 批量删除景区表
      * 
@@ -58,4 +61,15 @@ public interface IVxJingdianTableService
      * @return 结果
      */
     public int deleteVxJingdianTableById(Long id);
+
+    /**
+     * 获取用户收藏景区列表
+     */
+    public List<VxJingdianTable> selectVxJingdianTableByWxuserId(Long wxuserId);
+
+    /**
+     * 执行库存-1
+     */
+    public void updateKc(Long jingdianId);
+
 }

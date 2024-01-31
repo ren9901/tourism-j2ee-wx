@@ -20,6 +20,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select ID, jingdian_id, wxuser_id, content, create_by, create_time, update_by, update_time, remark from comment_table
     </sql>
 
+    <select id="getCommentListByJdID" parameterType="CommentTable" resultMap="CommentTableResult">
+        <include refid="selectCommentTableVo"/>
+        where jingdian_id = #{jdid}
+    </select>
+
     <select id="selectCommentTableList" parameterType="CommentTable" resultMap="CommentTableResult">
         <include refid="selectCommentTableVo"/>
         <where>  

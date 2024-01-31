@@ -7,6 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap type="OrderTable" id="OrderTableResult">
         <result property="id"    column="ID"    />
         <result property="wxuserId"    column="wxuser_id"    />
+        <result property="jingdianId"    column="jingdian_id"    />
+        <result property="jdname"    column="jdname"    />
         <result property="nickname"    column="nickname"    />
         <result property="price"    column="price"    />
         <result property="orderNum"    column="order_num"    />
@@ -18,13 +20,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectOrderTableVo">
-        select ID, wxuser_id, nickname, price, order_num, create_by, create_time, update_by, update_time, remark from order_table
+        select ID, wxuser_id, jingdian_id, jdname, nickname, price, order_num, create_by, create_time, update_by, update_time, remark from order_table
     </sql>
 
     <select id="selectOrderTableList" parameterType="OrderTable" resultMap="OrderTableResult">
         <include refid="selectOrderTableVo"/>
         <where>  
-            <if test="nickname != null  and nickname != ''"> and nickname like concat('%', #{nickname}, '%')</if>
+            <if test="jdname != null  and jdname != ''"> and jdname like concat('%', #{jdname}, '%')</if>
         </where>
     </select>
     
@@ -37,6 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         insert into order_table
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="wxuserId != null">wxuser_id,</if>
+            <if test="jingdianId != null">jingdian_id,</if>
+            <if test="jdname != null">jdname,</if>
             <if test="nickname != null">nickname,</if>
             <if test="price != null">price,</if>
             <if test="orderNum != null">order_num,</if>
@@ -48,6 +52,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="wxuserId != null">#{wxuserId},</if>
+            <if test="jingdianId != null">#{jingdianId},</if>
+            <if test="jdname != null">#{jdname},</if>
             <if test="nickname != null">#{nickname},</if>
             <if test="price != null">#{price},</if>
             <if test="orderNum != null">#{orderNum},</if>
@@ -63,6 +69,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         update order_table
         <trim prefix="SET" suffixOverrides=",">
             <if test="wxuserId != null">wxuser_id = #{wxuserId},</if>
+            <if test="jingdianId != null">jingdian_id = #{jingdianId},</if>
+            <if test="jdname != null">jdname = #{jdname},</if>
             <if test="nickname != null">nickname = #{nickname},</if>
             <if test="price != null">price = #{price},</if>
             <if test="orderNum != null">order_num = #{orderNum},</if>

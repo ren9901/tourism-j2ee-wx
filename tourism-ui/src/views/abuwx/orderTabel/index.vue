@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="用户昵称" prop="nickname">
+      <el-form-item label="景点名称" prop="jdname">
         <el-input
-          v-model="queryParams.nickname"
-          placeholder="请输入用户昵称"
+          v-model="queryParams.jdname"
+          placeholder="请输入景点名称"
           clearable
           @keyup.enter.native="handleQuery"
         />
@@ -65,6 +65,8 @@
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="ID" align="center" prop="id" />
       <el-table-column label="微信用户ID" align="center" prop="wxuserId" />
+      <el-table-column label="景点ID" align="center" prop="jingdianId" />
+      <el-table-column label="景点名称" align="center" prop="jdname" />
       <el-table-column label="用户昵称" align="center" prop="nickname" />
       <el-table-column label="订单价格" align="center" prop="price" />
       <el-table-column label="订单数量" align="center" prop="orderNum" />
@@ -100,6 +102,9 @@
     <!-- 添加或修改订单对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
+        <el-form-item label="景点名称" prop="jdname">
+          <el-input v-model="form.jdname" placeholder="请输入景点名称" />
+        </el-form-item>
         <el-form-item label="用户昵称" prop="nickname">
           <el-input v-model="form.nickname" placeholder="请输入用户昵称" />
         </el-form-item>
@@ -150,7 +155,7 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        nickname: null,
+        jdname: null,
       },
       // 表单参数
       form: {},
@@ -182,6 +187,8 @@ export default {
       this.form = {
         id: null,
         wxuserId: null,
+        jingdianId: null,
+        jdname: null,
         nickname: null,
         price: null,
         orderNum: null,

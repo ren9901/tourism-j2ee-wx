@@ -9,7 +9,7 @@ import com.tourism.common.core.domain.BaseEntity;
  * 订单对象 order_table
  * 
  * @author tourism
- * @date 2024-01-30
+ * @date 2024-01-31
  */
 public class OrderTable extends BaseEntity
 {
@@ -20,6 +20,13 @@ public class OrderTable extends BaseEntity
 
     /** 微信用户ID */
     private Long wxuserId;
+
+    /** 景点ID */
+    private Long jingdianId;
+
+    /** 景点名称 */
+    @Excel(name = "景点名称")
+    private String jdname;
 
     /** 用户昵称 */
     @Excel(name = "用户昵称")
@@ -50,6 +57,24 @@ public class OrderTable extends BaseEntity
     public Long getWxuserId() 
     {
         return wxuserId;
+    }
+    public void setJingdianId(Long jingdianId) 
+    {
+        this.jingdianId = jingdianId;
+    }
+
+    public Long getJingdianId() 
+    {
+        return jingdianId;
+    }
+    public void setJdname(String jdname) 
+    {
+        this.jdname = jdname;
+    }
+
+    public String getJdname() 
+    {
+        return jdname;
     }
     public void setNickname(String nickname) 
     {
@@ -84,6 +109,8 @@ public class OrderTable extends BaseEntity
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("wxuserId", getWxuserId())
+            .append("jingdianId", getJingdianId())
+            .append("jdname", getJdname())
             .append("nickname", getNickname())
             .append("price", getPrice())
             .append("orderNum", getOrderNum())
