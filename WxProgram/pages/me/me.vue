@@ -73,9 +73,6 @@
 				</view>
 			</view>
 		</view>
-		<view class="copyright">
-			<text>AbuCoder版权所有</text>
-		</view>
 	</view>
 </template>
 

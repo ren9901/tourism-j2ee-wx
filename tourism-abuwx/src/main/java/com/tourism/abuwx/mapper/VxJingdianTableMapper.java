@@ -27,6 +27,8 @@ public interface VxJingdianTableMapper
      */
     public List<VxJingdianTable> selectVxJingdianTableList(VxJingdianTable vxJingdianTable);
 
+    public List<VxJingdianTable> selectVxJingdianTableListTop3(VxJingdianTable vxJingdianTable);
+
     /**
      * 新增景区表
      * 

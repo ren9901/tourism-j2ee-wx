@@ -49,6 +49,10 @@ public class VxJingdianTableServiceImpl implements IVxJingdianTableService {
         return vxJingdianTableMapper.selectVxJingdianTableList(vxJingdianTable);
     }
 
+    public List<VxJingdianTable> selectVxJingdianTableListTop3(VxJingdianTable vxJingdianTable) {
+        return vxJingdianTableMapper.selectVxJingdianTableListTop3(vxJingdianTable);
+    }
+
     /**
      * 新增景区表
      *

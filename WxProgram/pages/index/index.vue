@@ -2,15 +2,8 @@
 	<view class="content">
 		<view class="message-box" @click="noticeMore">
 			<view class="page-section swiper">
-				<view class="page-section-spacing">
-					<swiper style="height: 120rpx;" class="swiper" vertical="ture" circular="true"
-						indicator-dots='false' indicator-color="rgba(0,0,0,.0)" indicator-active-color="rgba(0,0,0,.0)"
-						autoplay="true" interval="4000">
-						<swiper-item class="swiper-list" v-for="(item, index) in messageData" :key="index">
-							<view class="message-tltle">{{item.noticeTitle}}</view>
-							<view class="message-content"><span>感谢</span>{{item.noticeDesc}}</view>
-						</swiper-item>
-					</swiper>
+				<view style="padding-top: 20upx;">
+					<u-search shape="round" :disabled="true"></u-search>
 				</view>
 			</view>
 		</view>
@@ -32,7 +25,7 @@
 		
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-blue text-shadow">热门景点推荐</text>
+				<text class="text-xl text-bold text-blue text-shadow">热门景区推荐</text>
 				<text class="text-ABC text-blue">recommend</text>
 			</view>
 			<view class="action" @click="goMore"><text class="text-lg text-grey text-shadow">更多</text></view>
@@ -47,12 +40,16 @@
 					</view>
 				</view>
 				<view class="imageDetail">
-					<view class="imageDetail-text">景点简介：{{item.remark}}</view>
+					<view class="imageDetail-text">景区简介：{{item.remark}}</view>
 				</view>
 				<view class="imageKc">
 					<view class="imageDetail-text">门票价格：{{item.price}} ¥</view>
 					<view class="imageDetail-text">库存数：{{item.kucunNum}}</view>
 				</view>
+				<!-- <view class="imageKc">
+					<u-icon name="heart" size="28"></u-icon>
+					<u-icon name="heart" size="28"></u-icon>
+				</view> -->
 				
 			</view>
 		</view>
@@ -65,7 +62,6 @@
 	export default {
 		data() {
 			return {
-				adlist:this.myad()[0],
 				bannerList: [],
 				messageData: [],
 				curriculum: [],
@@ -77,36 +73,9 @@
 			this.getNoticelist()
 			this.getItemslist()
 			this.getProgrammslist()
-			this.myAd()
 		},
 		methods: {
-			//暴力插屏广告
-			myAd(){
-				let that = this
-				if (that.myad()[0].plaqueAd) {
-					setInterval(function() {
-						// 在页面中定义插屏广告
-						let interstitialAd = null
-				
-						// 在页面onLoad回调事件中创建插屏广告实例
-						if (wx.createInterstitialAd) {
-							interstitialAd = wx.createInterstitialAd({
-								adUnitId: that.myad()[0].plaqueAd
-							})
-							interstitialAd.onLoad(() => {})
-							interstitialAd.onError((err) => {})
-							interstitialAd.onClose(() => {})
-						}
-				
-						// 在适合的场景显示插屏广告
-						if (interstitialAd) {
-							interstitialAd.show().catch((err) => {
-								console.error(err)
-							})
-						}
-					}, 15000); //15000为插屏间隔时间
-				}
-			},
+			
 			getBannerlist(){
 				this.request('loadBaneer', 'GET').then(res=>{
 					// console.log("res:",res)
@@ -138,14 +107,10 @@
 				})
 			},
 			getProgrammslist(){
-				this.request('jdList', 'GET').then(res=>{
-					console.log("res:",res)
-					// if(res){
-					// 	this.projectList = res.data
-					// }
+				this.request('jdListTop3', 'GET').then(res=>{
 					if(res){
 						let mydata = {}
-						 for (var i = 0; i < res.data.length; i++) {
+						for (var i = 0; i < res.data.length; i++) {
 							mydata[i] = {};
 							mydata[i]['programImg'] = 'http://localhost:8083' + res.data[i].indexUrl;
 							mydata[i]['id'] =res.data[i].id
@@ -156,7 +121,6 @@
 							mydata[i]['price'] = res.data[i].price
 							mydata[i]['kucunNum'] = res.data[i].kucunNum
 						}
-						// console.log(mydata)
 						this.projectList = mydata
 					}
 				})
@@ -176,6 +140,11 @@
 				uni.navigateTo({
 					url:'../me/mynotice/mynotice'
 				})
+			},
+			goProject(id){
+				uni.navigateTo({
+					url:`../order/order?id=${id}`
+				})
 			}
 		}
 	}
@@ -192,7 +161,7 @@
 	/*通知公告*/
 	.message-box {
 		width: 100%;
-		height: 120rpx;
+		height: 100rpx;
 		background: url(https://zhoukaiwen.com/img/icon/clock.gif) #FFFFFF;
 		background-repeat: no-repeat;
 		background-size: 100rpx 100rpx;

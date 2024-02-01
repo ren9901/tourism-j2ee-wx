@@ -28,7 +28,7 @@ public class WxCommentController extends BaseController {
     /**
      * 添加评论信息
      */
-    @PostMapping
+    @PostMapping("addComment")
     public AjaxResult addComment(@RequestBody CommentTable commentTable){
         return toAjax(commentService.insertCommentTable(commentTable));
     }

@@ -139,4 +139,11 @@ public class WxLoginController {
         return AjaxResult.success(abucoderWxuser);
     }
 
+    @GetMapping(value = "getWxInfo/{id}")
+    public AjaxResult getInfo(@PathVariable("id") Long id)
+    {
+        return AjaxResult.success(iAbucoderWxuserService.selectAbucoderWxuserById(id));
+    }
+
+
 }

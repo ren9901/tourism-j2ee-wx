@@ -38,6 +38,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <where>  
             <if test="name != null  and name != ''"> and NAME like concat('%', #{name}, '%')</if>
         </where>
+        order by DZNUM desc
+    </select>
+
+    <select id="selectVxJingdianTableListTop3" parameterType="VxJingdianTable" resultMap="VxJingdianTableResult">
+        <include refid="selectVxJingdianTableVo"/>
+        order by DZNUM desc
+        limit 3
     </select>
 
     <select id="selectVxJingdianTableById" parameterType="Long" resultMap="VxJingdianTableResult">

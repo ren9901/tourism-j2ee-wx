@@ -25,6 +25,12 @@ public class WxJingDianController extends BaseController {
         return AjaxResult.success(jdList);
     }
 
+    @GetMapping("jdListTop3")
+    public AjaxResult jdListTop3(VxJingdianTable vxJingdianTable){
+        List<VxJingdianTable> jdList = jdService.selectVxJingdianTableListTop3(vxJingdianTable);
+        return AjaxResult.success(jdList);
+    }
+
     /**
      * 获取景区表详细信息
      */
