@@ -1,21 +1,29 @@
 <template>
 	<view class="content">
-		<ad :unit-id="adlist.bannerAd"></ad>
-		<view class="cu-card article shadow" v-for="(item, index) in projectList" :key="index">
-			<view class="cu-item shadow">
-				<view class="title">
-					<text class="text-cut">{{item.programName}}</text>
-				</view>
-				<view class="desc">
-					<view class="text-desc cu-tag bg-cyan">{{item.programTag}}</view>
-				</view>
-				<view class="cu-item">
-					<image :src="item.programImg" class="myimage"></image>
-				</view>
-				<view class="desc" style="padding: 10rpx;">
-					<u-parse class="text-content" :content="item.programContent"></u-parse>
+		<view class="cu-card case no-card">
+			<view v-if="loadingList.length>0">
+				<view @click="goProject(item.id)" class="cu-item shadow" v-for="(item, index) in projectList"
+					:key="index">
+					<view class="image">
+						<image :src="item.programImg" mode="widthFix"></image>
+						<view class="cu-bar bg-shadeBottom">
+							<text class="text-cut">{{ item.programName }}</text>
+							<text class="text-cut">点赞数：{{ item.dzNum }} 收藏数：{{item.collectNum}}</text>
+						</view>
+					</view>
+					<view class="imageDetail">
+						<view class="imageDetail-text">景区简介：{{item.remark}}</view>
+					</view>
+					<view class="imageKc">
+						<view class="imageDetail-text">门票价格：{{item.price}} ¥</view>
+						<view class="imageDetail-text">库存数：{{item.kucunNum}}</view>
+					</view>
 				</view>
 			</view>
+			<view v-else>
+				<u-empty mode="search" icon="http://cdn.uviewui.com/uview/empty/search.png"></u-empty>
+			</view>
+
 		</view>
 	</view>
 </template>
@@ -24,30 +32,42 @@
 	export default {
 		data() {
 			return {
-				adlist:this.myad()[0],
-				projectList:{}
+				projectList: [],
+				searchText: '',
+				loadingList: []
 			}
 		},
-		onLoad() {
-			this.getprojectList()
+		onLoad(query) {
+			console.log(this.projectList.length)
+			this.searchText = Object.keys(query).length !== 0 ? query.jdName : '';
+			this.getProgrammslist()
 		},
 		methods: {
-			getprojectList(){
-				this.request('loadProgramms', 'GET').then(res=>{
-					console.log("res:",res)
-					if(res){
+			getProgrammslist() {
+				this.request('jdList', {
+					name: this.searchText
+				}, 'GET').then(res => {
+					if (res) {
+						this.loadingList = res.data
 						let mydata = {}
-						 for (var i = 0; i < res.data.length; i++) {
+						for (var i = 0; i < res.data.length; i++) {
 							mydata[i] = {};
-							mydata[i]['programImg'] = this.myimgurl() + res.data[i].programImg;
-							mydata[i]['id'] =res.data[i].id
-							mydata[i]['programName'] = res.data[i].programName
-							mydata[i]['programTag'] = res.data[i].programTag
-							mydata[i]['programContent'] = res.data[i].programContent
+							mydata[i]['programImg'] = 'http://localhost:8083' + res.data[i].indexUrl;
+							mydata[i]['id'] = res.data[i].id
+							mydata[i]['programName'] = res.data[i].name
+							mydata[i]['dzNum'] = res.data[i].dznum
+							mydata[i]['collectNum'] = res.data[i].collectNum
+							mydata[i]['remark'] = res.data[i].remark
+							mydata[i]['price'] = res.data[i].price
+							mydata[i]['kucunNum'] = res.data[i].kucunNum
 						}
-						// console.log(mydata)
 						this.projectList = mydata
 					}
+				})
+			},
+			goProject(id) {
+				uni.navigateTo({
+					url: `../order/order?id=${id}`
 				})
 			}
 		}
@@ -55,11 +75,12 @@
 </script>
 
 <style lang="scss">
-	.myimage{
+	.myimage {
 		width: 100%;
 		height: 360rpx;
 	}
-	.text-desc{
+
+	.text-desc {
 		/* margin-top: 25rpx; */
 		margin: 20rpx;
 		font-size: 28rpx;
@@ -67,7 +88,8 @@
 		/* height: 4.8em; */
 		overflow: hidden;
 	}
-	.text-content{
+
+	.text-content {
 		margin-top: 20rpx;
 	}
 </style>

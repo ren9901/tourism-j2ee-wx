@@ -8,7 +8,7 @@
 							<view class="avator">
 								<img :src="userinfo.avatar">
 							</view>
-							<view class="phone-number">ID:{{userinfo.id}} 昵称：{{userinfo.nickname || '未设置昵称'}}</view>
+							<view class="phone-number">昵称：{{userinfo.nickname || '未设置昵称'}}</view>
 						</view>
 						<view v-else>
 							<view class="avator">

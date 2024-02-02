@@ -1,6 +1,5 @@
 <template>
 	<view>
-		<ad :unit-id="adlist.bannerAd"></ad>
 		<view class="cu-card article shadow" v-for="(item,index) in noticelist" :key="index">
 			<view class="cu-item shadow">
 				<view class="title">{{item.noticeTitle}}</view>
@@ -22,7 +21,6 @@
 	export default {
 		data() {
 			return {
-				adlist:this.myad()[0],
 				noticelist:{}
 			}
 		},

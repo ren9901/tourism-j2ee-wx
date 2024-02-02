@@ -10,16 +10,7 @@
 				 "enablePullDownRefresh": false
 			}
 		}
-	    ,{
-            "path" : "pages/about/about",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "关于",
-                "enablePullDownRefresh": false,
-				"navigationStyle": "custom"
-            }
-            
-        }
+	    
         ,{
             "path" : "pages/me/me",
             "style" :                                                                                    
@@ -34,7 +25,7 @@
             "path" : "pages/me/mynotice/mynotice",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "我的通知公告",
+                "navigationBarTitleText": "通知公告",
                 "enablePullDownRefresh": false
             }
             
@@ -43,7 +34,7 @@
             "path" : "pages/itemlist/itemlist",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "推荐开源项目",
+                "navigationBarTitleText": "更多景区",
                 "enablePullDownRefresh": false
             }
             
@@ -52,7 +43,7 @@
             "path" : "pages/projectlist/projectlist",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "小程序推荐",
+                "navigationBarTitleText": "搜索",
                 "enablePullDownRefresh": false
             }
             
@@ -87,12 +78,7 @@
 	        "selectedIconPath": "/static/tabbar/home_ac.png",
 	        "text": "首页"
 	    }, 
-		{
-	        "pagePath": "pages/about/about",
-	        "iconPath": "/static/tabbar/about.png",
-	        "selectedIconPath": "/static/tabbar/about_ac.png",
-	        "text": "关于"
-	    }, {
+		 {
 	        "pagePath": "pages/me/me",
 	        "iconPath": "/static/tabbar/me.png",
 	        "selectedIconPath": "/static/tabbar/me_ac.png",

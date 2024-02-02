@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="message-box" @click="noticeMore">
+		<view class="message-box" @click="gomoreapp">
 			<view class="page-section swiper">
 				<view style="padding-top: 20upx;">
 					<u-search shape="round" :disabled="true"></u-search>
@@ -46,14 +46,8 @@
 					<view class="imageDetail-text">门票价格：{{item.price}} ¥</view>
 					<view class="imageDetail-text">库存数：{{item.kucunNum}}</view>
 				</view>
-				<!-- <view class="imageKc">
-					<u-icon name="heart" size="28"></u-icon>
-					<u-icon name="heart" size="28"></u-icon>
-				</view> -->
-				
 			</view>
 		</view>
-		<!-- <ad-custom :unit-id="adlist.gridAd"></ad-custom> -->
 		
 	</view>
 </template>
@@ -131,6 +125,7 @@
 					url:'../itemlist/itemlist'
 				})
 			},
+			// 搜索
 			gomoreapp(){
 				uni.navigateTo({
 					url:'../projectlist/projectlist'
