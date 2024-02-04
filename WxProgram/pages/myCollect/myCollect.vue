@@ -33,22 +33,20 @@
 		data() {
 			return {
 				projectList: [],
-				searchText: '',
-				loadingList: []
+				loadingList: [],
+				wxuserId: '',
 			}
 		},
 		onShow() {
 			this.getProgrammslist()
 		},
 		onLoad(query) {
-			// console.log(this.projectList.length)
-			this.searchText = Object.keys(query).length !== 0 ? query.jdName : '';
+			this.wxuserId = JSON.parse(uni.getStorageSync("userinfo")).id;
+			
 		},
 		methods: {
 			getProgrammslist() {
-				this.request('jdList', {
-					name: this.searchText
-				}, 'GET').then(res => {
+				this.request(`myCollect/${this.wxuserId}`, 'GET').then(res => {
 					if (res) {
 						this.loadingList = res.data
 						let mydata = {}

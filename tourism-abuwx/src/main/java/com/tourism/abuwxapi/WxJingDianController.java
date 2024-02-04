@@ -42,7 +42,7 @@ public class WxJingDianController extends BaseController {
     /**
      * 获取用户收藏景区列表
      */
-    @GetMapping(value = "byUserId/{wxuserId}")
+    @GetMapping(value = "myCollect/{wxuserId}")
     public AjaxResult getListByUserId(@PathVariable("wxuserId") Long wxuserId){
         List<VxJingdianTable> jdList = jdService.selectVxJingdianTableByWxuserId(wxuserId);
         return AjaxResult.success(jdList);

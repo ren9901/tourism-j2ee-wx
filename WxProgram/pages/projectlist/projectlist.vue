@@ -49,9 +49,17 @@
 				}
 			},
 			goProject(id){
-				uni.navigateTo({
-					url:`../order/order?id=${id}`
-				})
+				if(uni.getStorageSync("userinfo")!=''){
+					uni.navigateTo({
+						url:`../order/order?id=${id}`
+					})
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "请先登录后，再查看景点详情！",
+						duration: 2000
+					})
+				}
 			},
 			getProgrammslist(){
 				this.request('jdListTop3', 'GET').then(res=>{

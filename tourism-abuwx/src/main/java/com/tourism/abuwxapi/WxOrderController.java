@@ -1,15 +1,15 @@
 package com.tourism.abuwxapi;
 
 import com.tourism.abuwx.domain.OrderTable;
+import com.tourism.abuwx.domain.VxJingdianTable;
 import com.tourism.abuwx.service.IOrderTableService;
 import com.tourism.abuwx.service.IVxJingdianTableService;
 import com.tourism.common.core.controller.BaseController;
 import com.tourism.common.core.domain.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -30,5 +30,14 @@ public class WxOrderController extends BaseController {
         jdService.updateKc(orderTable.getJingdianId());
 
         return toAjax(orderTableService.insertOrderTable(orderTable));
+    }
+
+    /**
+     * 查询订单列表
+     */
+    @GetMapping("orderList")
+    public AjaxResult orderList(OrderTable orderTable){
+        List<OrderTable> orderTables = orderTableService.selectOrderTableList(orderTable);
+        return AjaxResult.success(orderTables);
     }
 }

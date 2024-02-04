@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectVxJingdianTableByWxuserId" parameterType="Long" resultMap="VxJingdianTableResult">
         select jd.*
         from VX_JINGDIAN_TABLE as jd
-        left join WXUSER_COLLENT as wc
+        left join wxuser_collent as wc
             on wc.jingdian_id = jd.ID
         WHERE
             wc.wxuser_id = #{wxuserId}

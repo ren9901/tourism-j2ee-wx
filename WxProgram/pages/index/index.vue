@@ -62,7 +62,7 @@
 				projectList:[]
 			}
 		},
-		onLoad() {
+		onShow() {
 			this.getBannerlist()
 			this.getNoticelist()
 			this.getItemslist()
@@ -137,9 +137,18 @@
 				})
 			},
 			goProject(id){
-				uni.navigateTo({
-					url:`../order/order?id=${id}`
-				})
+				if(uni.getStorageSync("userinfo")!=''){
+					uni.navigateTo({
+						url:`../order/order?id=${id}`
+					})
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "请先登录后，再查看景点详情！",
+						duration: 2000
+					})
+				}
+				
 			}
 		}
 	}

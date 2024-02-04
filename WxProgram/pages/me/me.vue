@@ -17,18 +17,18 @@
 							<view class="phone-number" style="color: red;">请先点我登录</view>
 						</view>
 					</view>
-					<view class="box-bd" @click="myNotice">
-						<view class="item">
+					<view class="box-bd">
+						<!-- <view class="item">
 							<u-icon class="icon" name="volume-fill" size="25" color="#757575"></u-icon>
-							<view class="text">我的通知</view>
-						</view>
-						<view class="item">
+							<view class="text">系统通知</view>
+						</view> -->
+						<view class="item" @click="gotoMyCollect">
 							<u-icon class="icon" name="star-fill" size="25" color="#757575"></u-icon>
 							<view class="text">我的收藏</view>
 						</view>
-						<view class="item">
-							<u-icon class="icon" name="server-fill" size="25" color="#757575"></u-icon>
-							<view class="text">我的客服</view>
+						<view class="item" @click="gotoMyOrder">
+							<u-icon class="icon" name="bag-fill" size="25" color="#757575"></u-icon>
+							<view class="text">我的订单</view>
 						</view>
 					</view>
 				</view>
@@ -36,29 +36,9 @@
 		</view>
 		<view class="list-content">
 			<view class="list">
-				<view class="li">
-					<u-icon class="icon" name="coupon-fill" size="25" color="#757575"></u-icon>
-					<view class="text">我的名片</view>
-					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
-				</view>
-				<view class="li " @click="changeSkin">
-					<u-icon class="icon" name="grid-fill" size="25" color="#757575"></u-icon>
-					<view class="text">主题切换</view>
-					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
-				</view>
-				<view class="li ">
-					<u-icon class="icon" name="question-circle-fill" size="25" color="#757575"></u-icon>
-					<view class="text">帮助中心</view>
-					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
-				</view>
-				<view class="li ">
-					<u-icon class="icon" name="info-circle-fill" size="25" color="#757575"></u-icon>
-					<view class="text">关于我们</view>
-					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
-				</view>
-				<view class="li ">
-					<u-icon class="icon" name="email-fill" size="25" color="#757575"></u-icon>
-					<view class="text">意见反馈</view>
+				<view class="li noborder"  @click="myNotice">
+					<u-icon class="icon" name="volume-fill" size="25" color="#757575"></u-icon>
+					<view class="text">系统通知</view>
 					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
 				</view>
 				<view class="li noborder">
@@ -67,7 +47,7 @@
 					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
 				</view>
 				<view class="li noborder" @click="loginOut">
-					<u-icon class="icon" name="setting-fill" size="25" color="#757575"></u-icon>
+					<u-icon class="icon" name="account-fill" size="25" color="#757575"></u-icon>
 					<view class="text">注销登录</view>
 					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
 				</view>
@@ -142,6 +122,16 @@
 			myNotice() {
 				uni.navigateTo({
 					url: './mynotice/mynotice'
+				})
+			},
+			gotoMyCollect(){
+				uni.navigateTo({
+					url:'../myCollect/myCollect'
+				})
+			},
+			gotoMyOrder(){
+				uni.navigateTo({
+					url:'../myorder/myorder'
 				})
 			},
 			loginOut() {

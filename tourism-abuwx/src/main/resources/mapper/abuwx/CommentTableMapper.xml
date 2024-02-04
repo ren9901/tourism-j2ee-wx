@@ -23,6 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="getCommentListByJdID" parameterType="CommentTable" resultMap="CommentTableResult">
         <include refid="selectCommentTableVo"/>
         where jingdian_id = #{jdid}
+        order by  create_time desc
     </select>
 
     <select id="selectCommentTableList" parameterType="CommentTable" resultMap="CommentTableResult">

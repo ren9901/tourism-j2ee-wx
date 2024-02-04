@@ -1,5 +1,5 @@
 <template>
-	<view class="content" >
+	<view class="content">
 		<view class="cu-bar bg-white margin-top-xs">
 			<view class="action sub-title">
 				<text class="text-xl text-bold text-blue text-shadow">景区详情</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="imageDetail-text">景区名称：{{jdDetail.name}}</view>
 				<view class="imageDetail">
-					
+
 					<view class="imageDetail-text">景区简介：{{jdDetail.remark}}</view>
 				</view>
 				<view class="imageKc">
@@ -28,7 +28,7 @@
 				<text class="text-xl text-bold text-blue text-shadow">评论</text>
 				<text class="text-ABC text-blue">comment</text>
 			</view>
-		</view>	
+		</view>
 		<view class="cu-card case no-card">
 			<view class="cu-item shadow" v-for="(item, index) in commentListVo" :key="index">
 				<view class="commentUser">
@@ -36,11 +36,11 @@
 					<view class="commentName">{{item.nickname}}</view>
 				</view>
 				<view style="margin: 0 18upx;">
-					<u-alert type = "primary" :description = "item.content" fontSize="16"></u-alert>
+					<u-alert type="primary" :description="item.content" fontSize="16"></u-alert>
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 底部 -->
 		<view class="bottom-bar">
 			<view class="icon-container">
@@ -50,7 +50,8 @@
 				<u-icon v-else name="star-fill" size="28"></u-icon>
 			</view>
 			<view class="order-button">
-				<u-button text="订购门票"  color="linear-gradient(to right, rgb(66, 83, 216), rgb(213, 51, 186))"></u-button>
+				<u-button text="订购门票" @click="buyOrder()"
+					color="linear-gradient(to right, rgb(66, 83, 216), rgb(213, 51, 186))"></u-button>
 			</view>
 		</view>
 	</view>
@@ -60,27 +61,62 @@
 	export default {
 		data() {
 			return {
-				jdDetail:{},
+				jdDetail: {},
 				isDz: false,
 				isSc: false,
 				jingdianId: '',
 				wxuserId: '',
+				wxusername: '',
 				commentList: [],
-				commentListVo: []
+				commentListVo: [],
+				orderReq: {}
 			}
 		},
 		onLoad(query) {
 			this.wxuserId = JSON.parse(uni.getStorageSync("userinfo")).id;
+			this.wxusername = JSON.parse(uni.getStorageSync("userinfo")).nickname;
 			this.jingdianId = query.id;
 			// console.log('query', this.wxuserId );
 			this.getInfo(query.id);
 			this.getCommentList(this.jingdianId);
 		},
 		methods: {
-			getCommentList(jdid){
+			buyOrder() {
+				uni.showModal({
+					title: '确认下单',
+					content: `需要支付${this.jdDetail.price}元,确定要确认下单支付吗？`,
+					cancelText: "取消", // 取消按钮的文字
+					confirmText: "确认", // 确认按钮的文字
+					confirmColor: '#f55850',
+					success: (res) => {
+						if (res.confirm) {
+							this.request("buy", {
+								wxuserId: this.wxuserId,
+								jingdianId: this.jingdianId,
+								jdname: this.jdDetail.name,
+								nickname: this.wxusername,
+								price: this.jdDetail.price,
+								orderNum: '1'
+							}, 'POST').then(res => {
+								if (res.code == 200) {
+									uni.showToast({
+										icon: "none",
+										title: "下单成功，可在我的订单中查看详情！",
+										duration: 2000
+									})
+								}
+							})
+
+						} else {
+							console.log('cancel') //点击取消之后执行的代码
+						}
+					}
+				})
+			},
+			getCommentList(jdid) {
 				this.commentListVo = [];
-				this.request(`commentListByJdID/${jdid}`, 'GET').then(res=>{
-					if(res.code == 200){
+				this.request(`commentListByJdID/${jdid}`, 'GET').then(res => {
+					if (res.code == 200) {
 						this.commentList = res.data;
 						this.commentList.forEach((comment, index) => {
 							this.getUserInfo(comment);
@@ -88,10 +124,10 @@
 					}
 				})
 			},
-			getUserInfo(comment){
+			getUserInfo(comment) {
 				const userId = comment.wxuserId;
-				this.request(`getWxInfo/${userId}`, 'GET').then(res=>{
-					if(res.code == 200){
+				this.request(`getWxInfo/${userId}`, 'GET').then(res => {
+					if (res.code == 200) {
 						const objectVo = {};
 						objectVo.nickname = res.data.nickname;
 						objectVo.avatar = res.data.avatar;
@@ -99,22 +135,24 @@
 						// 添加进数组
 						this.commentListVo.push(objectVo);
 					}
-					
-					console.log(this.commentListVo,"vo")
+
+					console.log(this.commentListVo, "vo")
 				})
 			},
-			
-			scEvent(){
-				this.request(`operateSc?wxuserId=${this.wxuserId}`,{id: this.jingdianId},'PUT').then(res=>{
+
+			scEvent() {
+				this.request(`operateSc?wxuserId=${this.wxuserId}`, {
+					id: this.jingdianId
+				}, 'PUT').then(res => {
 					// console.log("res:",res)
-					if(res.code == 200){
+					if (res.code == 200) {
 						this.isSc = true;
 						uni.showToast({
 							icon: "none",
 							title: "收藏成功，可在我的收藏中查看！",
 							duration: 2000
 						})
-					}else{
+					} else {
 						uni.showToast({
 							icon: "none",
 							title: "已经加入收藏，请在我的收藏中查看！",
@@ -123,21 +161,23 @@
 					}
 				})
 			},
-			dzEvent(){
-				this.request("operateDz",{id: this.jingdianId},'PUT').then(res=>{
+			dzEvent() {
+				this.request("operateDz", {
+					id: this.jingdianId
+				}, 'PUT').then(res => {
 					// console.log("res:",res)
-					if(res.code == 200){
+					if (res.code == 200) {
 						this.isDz = true;
-						
+
 					}
 				})
 			},
-			getInfo(id){
-				this.request(`jdInfo/${id}`, 'GET').then(res=>{
+			getInfo(id) {
+				this.request(`jdInfo/${id}`, 'GET').then(res => {
 					// console.log("res:",res)
-					if(res.code == 200){
+					if (res.code == 200) {
 						this.jdDetail = res.data;
-						this.jdDetail.indexUrl ='http://localhost:8083' + this.jdDetail.indexUrl;
+						this.jdDetail.indexUrl = 'http://localhost:8083' + this.jdDetail.indexUrl;
 					}
 				})
 			}
@@ -147,8 +187,9 @@
 
 <style>
 	.content {
-		 padding-bottom: calc(135upx + env(safe-area-inset-bottom)); 
+		padding-bottom: calc(135upx + env(safe-area-inset-bottom));
 	}
+
 	.bottom-bar {
 		position: fixed;
 		bottom: env(safe-area-inset-bottom);
@@ -158,16 +199,14 @@
 		padding: 10px;
 		background-color: #f8f8f8;
 	}
-	
+
 	.icon-container {
 		display: flex;
 		justify-content: space-around;
 		width: 20vw;
 	}
-	
+
 	.order-button {
 		width: 70vw;
 	}
-
-
 </style>

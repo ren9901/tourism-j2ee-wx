@@ -61,7 +61,25 @@
             "path" : "pages/order/order",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "景区详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myCollect/myCollect",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的收藏",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myorder/myorder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的订单",
                 "enablePullDownRefresh": false
             }
             
