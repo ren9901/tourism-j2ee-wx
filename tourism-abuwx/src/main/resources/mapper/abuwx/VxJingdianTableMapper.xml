@@ -43,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectVxJingdianTableListTop3" parameterType="VxJingdianTable" resultMap="VxJingdianTableResult">
         <include refid="selectVxJingdianTableVo"/>
-        order by DZNUM desc
+        order by CAST(DZNUM AS UNSIGNED) desc
         limit 3
     </select>
 

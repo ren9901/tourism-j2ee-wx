@@ -125,34 +125,60 @@
 				})
 			},
 			gotoMyCollect(){
-				uni.navigateTo({
-					url:'../myCollect/myCollect'
-				})
+				if(uni.getStorageSync("userinfo")!=''){
+					uni.navigateTo({
+						url:'../myCollect/myCollect'
+					})
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "请先登录后，再进行操作！",
+						duration: 2000
+					})
+				}
+				
 			},
 			gotoMyOrder(){
-				uni.navigateTo({
-					url:'../myorder/myorder'
-				})
+				if(uni.getStorageSync("userinfo")!=''){
+					uni.navigateTo({
+						url:'../myorder/myorder'
+					})
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "请先登录后，再进行操作！",
+						duration: 2000
+					})
+				}
+				
 			},
 			loginOut() {
-				uni.showModal({
-					title: '注销登录提示',
-					content: '确定要注销登录吗？',
-					cancelText: "取消", // 取消按钮的文字
-					confirmText: "确认", // 确认按钮的文字
-					confirmColor: '#f55850',
-					success: (res) => {
-						if (res.confirm) {
-							console.log('comfirm') //点击确定之后执行的代码
-							uni.$u.toast("注销登录成功，欢迎再来")
-							removeUserInfo()
-							removeToken()
-							this.islogin=false
-						} else {
-							console.log('cancel') //点击取消之后执行的代码
+				if(uni.getStorageSync("userinfo")!=''){
+					uni.showModal({
+						title: '注销登录提示',
+						content: '确定要注销登录吗？',
+						cancelText: "取消", // 取消按钮的文字
+						confirmText: "确认", // 确认按钮的文字
+						confirmColor: '#f55850',
+						success: (res) => {
+							if (res.confirm) {
+								console.log('comfirm') //点击确定之后执行的代码
+								uni.$u.toast("注销登录成功，欢迎再来")
+								removeUserInfo()
+								removeToken()
+								this.islogin=false
+							} else {
+								console.log('cancel') //点击取消之后执行的代码
+							}
 						}
-					}
-				})
+					})
+				}else{
+					uni.showToast({
+						icon: "none",
+						title: "请先登录后，再进行操作！",
+						duration: 2000
+					})
+				}
 			}
 		}
 	}
