@@ -1,6 +1,4 @@
 /**
- * author：AbuCoder
- * date:2023年4月7日13:53:23
  * 正式上线，baseUrl请换成线上地址
  */
 

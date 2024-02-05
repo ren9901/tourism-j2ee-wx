@@ -80,6 +80,7 @@
 			this.getInfo(query.id);
 			this.getCommentList(this.jingdianId);
 		},
+		
 		methods: {
 			buyOrder() {
 				uni.showModal({
