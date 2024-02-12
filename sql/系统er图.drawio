@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-12T07:33:37.841Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="HsqcC1zV5XjNfiAabWaZ" version="23.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-12T07:34:35.146Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="udpYs7Ilz_zns3aokjtL" version="23.1.2" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -58,6 +58,14 @@
         <mxCell id="algwzxm7ROfjzH3wWhtB-7" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="algwzxm7ROfjzH3wWhtB-6">
           <mxGeometry x="-0.0462" y="-1" relative="1" as="geometry">
             <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="algwzxm7ROfjzH3wWhtB-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="algwzxm7ROfjzH3wWhtB-3" target="algwzxm7ROfjzH3wWhtB-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="algwzxm7ROfjzH3wWhtB-47" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="algwzxm7ROfjzH3wWhtB-46">
+          <mxGeometry x="-0.0182" y="3" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-3" value="管理" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
@@ -146,6 +154,9 @@
         </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-41" value="景点ID" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="717.5" y="370" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="algwzxm7ROfjzH3wWhtB-45" value="景区" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="430" width="115" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
