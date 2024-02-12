@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-12T07:32:22.684Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="R2EZOcEpm_ca6Kn8jRA3" version="23.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-12T07:33:21.335Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="NO7SWhn_ta-i1UKePfXA" version="23.1.2" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -15,9 +15,14 @@
         <mxCell id="algwzxm7ROfjzH3wWhtB-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="algwzxm7ROfjzH3wWhtB-1" target="algwzxm7ROfjzH3wWhtB-23">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="425" y="230" />
-              <mxPoint x="425" y="230" />
+              <mxPoint x="420" y="230" />
+              <mxPoint x="420" y="230" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="algwzxm7ROfjzH3wWhtB-44" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="algwzxm7ROfjzH3wWhtB-29">
+          <mxGeometry x="0.0807" y="-3" relative="1" as="geometry">
+            <mxPoint x="-5" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="algwzxm7ROfjzH3wWhtB-1" target="algwzxm7ROfjzH3wWhtB-33">
@@ -84,11 +89,6 @@
         <mxCell id="algwzxm7ROfjzH3wWhtB-18" value="景点ID" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="37.5" y="370" width="80" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="algwzxm7ROfjzH3wWhtB-20" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="510" y="155" as="geometry">
-            <mxPoint x="-88" y="75" as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="algwzxm7ROfjzH3wWhtB-23" target="algwzxm7ROfjzH3wWhtB-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -98,7 +98,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-23" value="收藏" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="365" y="130" width="120" height="50" as="geometry" />
+          <mxGeometry x="357.5" y="130" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="algwzxm7ROfjzH3wWhtB-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="algwzxm7ROfjzH3wWhtB-26" target="algwzxm7ROfjzH3wWhtB-27">
           <mxGeometry relative="1" as="geometry" />
