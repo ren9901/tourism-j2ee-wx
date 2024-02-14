@@ -11,7 +11,7 @@
  Target Server Version : 50743
  File Encoding         : 65001
 
- Date: 04/02/2024 17:47:16
+ Date: 14/02/2024 13:57:08
 */
 
 SET NAMES utf8mb4;
@@ -257,10 +257,10 @@ CREATE TABLE `VX_JINGDIAN_TABLE`  (
 -- ----------------------------
 -- Records of VX_JINGDIAN_TABLE
 -- ----------------------------
-INSERT INTO `VX_JINGDIAN_TABLE` VALUES (1, '大唐不夜城', '/profile/upload/2024/02/04/741e2f1bfb49270153a62b4abb88b219_20240204163517A001.jpg', '28', 90, '大唐不夜城是位于陕西省西安市雁塔区的综合性文化旅游项目，以盛唐文化为背景，以唐风元素为主线。该项目包括多个广场和场馆，旨在展示和体验唐文化。', '1', NULL, '2024-01-30 11:38:09', NULL, '2024-02-04 16:36:55', 9996);
+INSERT INTO `VX_JINGDIAN_TABLE` VALUES (1, '大唐不夜城', '/profile/upload/2024/02/04/741e2f1bfb49270153a62b4abb88b219_20240204163517A001.jpg', '31', 90, '大唐不夜城是位于陕西省西安市雁塔区的综合性文化旅游项目，以盛唐文化为背景，以唐风元素为主线。该项目包括多个广场和场馆，旨在展示和体验唐文化。', '1', NULL, '2024-01-30 11:38:09', NULL, '2024-02-12 22:47:42', 9995);
 INSERT INTO `VX_JINGDIAN_TABLE` VALUES (2, '西岳华山', '/profile/upload/2024/02/04/7738-2301051AT12_20240204164126A002.jpg', '16', 160, '华山是中国著名的五岳之一，位于陕西省渭南市华阴市，南接秦岭山脉，北瞰黄渭。华山不仅是道教主流全真派的圣地，还是中国民间广泛崇奉的神祇——西岳华山君神的所在地。华山以其险峻著称，被誉为“奇险天下第一山”。', '0', NULL, '2024-01-31 16:15:40', NULL, '2024-02-04 16:57:33', 9999);
-INSERT INTO `VX_JINGDIAN_TABLE` VALUES (3, '西安兵马俑', '/profile/upload/2024/02/04/e91784e6b00d5c03c09f16a826f869f7_20240204164628A003.jpeg', '0', 150, '兵马俑，即秦始皇陵兵马俑，亦简称秦兵马俑或秦俑，是第一批全国重点文物保护单位、第一批中国世界遗产，位于今陕西省西安市临潼区秦始皇陵以东1.5千米处的兵马俑坑内。先后有200多位外国元首和政府首脑参观访问，成为中国古代辉煌文明的一张金字名片，又被誉为世界十大古墓稀世珍宝之一。', '0', NULL, '2024-02-04 16:47:32', NULL, '2024-02-04 16:58:20', 9999);
-INSERT INTO `VX_JINGDIAN_TABLE` VALUES (4, '黄帝陵', '/profile/upload/2024/02/04/bdc051b6804722fb0948d85419832002_20240204164932A004.jpg', '2', 91, '黄帝陵古称“桥陵”，是历代帝王和名人祭祀黄帝的场所。历史上最早举行黄帝祭祀始于秦灵公三年（前422年），秦灵公“作吴阳上畤，专祭黄帝”。自汉武帝元封元年（前110年）亲率十八万大军祭祀黄帝陵以来，桥山一直是历代王朝举行国家大祭之地 ，保存着汉代至今的各类文物。陵前的“黄帝手植柏”距今五千余年，相传为黄帝亲手所植，是世界上最古老的柏树。', '0', NULL, '2024-02-04 16:51:40', NULL, '2024-02-04 16:58:29', 9999);
+INSERT INTO `VX_JINGDIAN_TABLE` VALUES (3, '西安兵马俑', '/profile/upload/2024/02/04/e91784e6b00d5c03c09f16a826f869f7_20240204164628A003.jpeg', '1', 150, '兵马俑，即秦始皇陵兵马俑，亦简称秦兵马俑或秦俑，是第一批全国重点文物保护单位、第一批中国世界遗产，位于今陕西省西安市临潼区秦始皇陵以东1.5千米处的兵马俑坑内。先后有200多位外国元首和政府首脑参观访问，成为中国古代辉煌文明的一张金字名片，又被誉为世界十大古墓稀世珍宝之一。', '1', NULL, '2024-02-04 16:47:32', NULL, '2024-02-12 22:47:57', 9998);
+INSERT INTO `VX_JINGDIAN_TABLE` VALUES (4, '黄帝陵', '/profile/upload/2024/02/04/bdc051b6804722fb0948d85419832002_20240204164932A004.jpg', '3', 91, '黄帝陵古称“桥陵”，是历代帝王和名人祭祀黄帝的场所。历史上最早举行黄帝祭祀始于秦灵公三年（前422年），秦灵公“作吴阳上畤，专祭黄帝”。自汉武帝元封元年（前110年）亲率十八万大军祭祀黄帝陵以来，桥山一直是历代王朝举行国家大祭之地 ，保存着汉代至今的各类文物。陵前的“黄帝手植柏”距今五千余年，相传为黄帝亲手所植，是世界上最古老的柏树。', '0', NULL, '2024-02-04 16:51:40', NULL, '2024-02-05 09:46:06', 9999);
 
 -- ----------------------------
 -- Table structure for abucoder_banners
@@ -277,7 +277,7 @@ CREATE TABLE `abucoder_banners`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '轮播图表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '轮播图表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of abucoder_banners
@@ -371,7 +371,7 @@ CREATE TABLE `abucoder_wxuser`  (
 -- ----------------------------
 -- Records of abucoder_wxuser
 -- ----------------------------
-INSERT INTO `abucoder_wxuser` VALUES (9, '任先生', 'http://localhost:8083/profile/upload/2024/02/04/YVVLeoQW73w502db3345ac2b33d223ababafb62f66aa_20240204103508A001.jpeg', 'oXDyn5mULcf5VYidLWhUUJlqcs8U', NULL, '任先生', '2024-01-26 16:19:52', '', '2024-02-04 17:36:46', NULL);
+INSERT INTO `abucoder_wxuser` VALUES (9, '任先生', 'http://localhost:8083/profile/upload/2024/02/14/R14kGLfjRl9zb006d95f9825f191df89fbbcc84231e6_20240214105520A002.jpeg', 'oXDyn5mULcf5VYidLWhUUJlqcs8U', NULL, '任先生', '2024-01-26 16:19:52', '', '2024-02-14 11:53:22', NULL);
 
 -- ----------------------------
 -- Table structure for comment_table
@@ -388,12 +388,13 @@ CREATE TABLE `comment_table`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`ID`, `jingdian_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '评论表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '评论表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of comment_table
 -- ----------------------------
 INSERT INTO `comment_table` VALUES (3, 1, 9, '风景优美，流连忘返！', '', '2024-02-04 16:12:40', '', NULL, '');
+INSERT INTO `comment_table` VALUES (4, 3, 9, '第一次来真好', '', '2024-02-12 22:48:30', '', NULL, '');
 
 -- ----------------------------
 -- Table structure for gen_table
@@ -561,12 +562,13 @@ CREATE TABLE `order_table`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`ID`, `wxuser_id`, `jingdian_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '订单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '订单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_table
 -- ----------------------------
 INSERT INTO `order_table` VALUES (3, 9, 1, '大唐不夜城', '任先生', 90, '1', '', '2024-02-04 16:59:45', '', NULL, '');
+INSERT INTO `order_table` VALUES (5, 9, 3, '西安兵马俑', '任先生', 150, '1', '', '2024-02-12 22:48:01', '', NULL, '');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -780,15 +782,19 @@ CREATE TABLE `sys_logininfor`  (
   `msg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT '' COMMENT '提示消息',
   `login_time` datetime(0) NULL DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_logininfor
 -- ----------------------------
-INSERT INTO `sys_logininfor` VALUES (1, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码错误', '2024-02-04 08:32:54');
-INSERT INTO `sys_logininfor` VALUES (2, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-04 08:33:00');
-INSERT INTO `sys_logininfor` VALUES (3, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-04 08:33:35');
-INSERT INTO `sys_logininfor` VALUES (4, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-04 09:42:22');
+INSERT INTO `sys_logininfor` VALUES (1, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-02-12 14:45:11');
+INSERT INTO `sys_logininfor` VALUES (2, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-12 14:45:24');
+INSERT INTO `sys_logininfor` VALUES (3, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-02-12 14:46:17');
+INSERT INTO `sys_logininfor` VALUES (4, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-14 01:31:46');
+INSERT INTO `sys_logininfor` VALUES (5, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-02-14 01:31:50');
+INSERT INTO `sys_logininfor` VALUES (6, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码已失效', '2024-02-14 01:44:14');
+INSERT INTO `sys_logininfor` VALUES (7, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-14 01:44:19');
+INSERT INTO `sys_logininfor` VALUES (8, 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-02-14 04:27:07');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -932,33 +938,15 @@ CREATE TABLE `sys_oper_log`  (
   `error_msg` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime(0) NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_oper_log
 -- ----------------------------
-INSERT INTO `sys_oper_log` VALUES (1, '操作日志', 9, 'com.tourism.web.controller.monitor.SysOperlogController.clean()', 'DELETE', 1, 'admin', NULL, '/monitor/operlog/clean', '127.0.0.1', '内网IP', '{}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:28:22');
-INSERT INTO `sys_oper_log` VALUES (2, '登录日志', 9, 'com.tourism.web.controller.monitor.SysLogininforController.clean()', 'DELETE', 1, 'admin', NULL, '/monitor/logininfor/clean', '127.0.0.1', '内网IP', '{}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:28:26');
-INSERT INTO `sys_oper_log` VALUES (3, '景区表', 2, 'com.tourism.abuwx.controller.VxJingdianTableController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"1\",\"createTime\":\"2024-01-30 11:38:09\",\"dznum\":\"28\",\"id\":1,\"indexUrl\":\"/profile/upload/2024/01/30/1_20240130113750A002.png\",\"kucunNum\":9997,\"name\":\"大唐不夜城\",\"params\":{},\"price\":99,\"remark\":\"测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区\",\"updateTime\":\"2024-02-04T16:34:36.788+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:34:36');
-INSERT INTO `sys_oper_log` VALUES (4, '景区表', 2, 'com.tourism.abuwx.controller.VxJingdianTableController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"1\",\"createTime\":\"2024-01-30 11:38:09\",\"dznum\":\"28\",\"id\":1,\"indexUrl\":\"/profile/upload/2024/02/04/741e2f1bfb49270153a62b4abb88b219_20240204163517A001.jpg\",\"kucunNum\":9997,\"name\":\"大唐不夜城\",\"params\":{},\"price\":99,\"remark\":\"测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区测试景区\",\"updateTime\":\"2024-02-04T16:35:20.793+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:35:20');
-INSERT INTO `sys_oper_log` VALUES (5, '景区表', 2, 'com.tourism.abuwx.controller.VxJingdianTableController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"1\",\"createTime\":\"2024-01-30 11:38:09\",\"dznum\":\"28\",\"id\":1,\"indexUrl\":\"/profile/upload/2024/02/04/741e2f1bfb49270153a62b4abb88b219_20240204163517A001.jpg\",\"kucunNum\":9997,\"name\":\"大唐不夜城\",\"params\":{},\"price\":90,\"remark\":\"大唐不夜城是位于陕西省西安市雁塔区的综合性文化旅游项目，以盛唐文化为背景，以唐风元素为主线。该项目包括多个广场和场馆，旨在展示和体验唐文化。\",\"updateTime\":\"2024-02-04T16:36:54.992+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:36:55');
-INSERT INTO `sys_oper_log` VALUES (6, '景区表', 2, 'com.tourism.abuwx.controller.VxJingdianTableController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"0\",\"createTime\":\"2024-01-31 16:15:40\",\"dznum\":\"15\",\"id\":2,\"indexUrl\":\"/profile/upload/2024/02/04/7738-2301051AT12_20240204164126A002.jpg\",\"kucunNum\":9999,\"name\":\"西岳华山\",\"params\":{},\"price\":160,\"remark\":\"华山是中国著名的五岳之一，位于陕西省渭南市华阴市，南接秦岭山脉，北瞰黄渭。华山不仅是道教主流全真派的圣地，还是中国民间广泛崇奉的神祇——西岳华山君神的所在地。华山以其险峻著称，被誉为“奇险天下第一山”。\",\"updateTime\":\"2024-02-04T16:41:59.619+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:41:59');
-INSERT INTO `sys_oper_log` VALUES (7, '景区表', 1, 'com.tourism.abuwx.controller.VxJingdianTableController.add()', 'POST', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"0\",\"createTime\":\"2024-02-04T16:47:31.628+08:00\",\"dznum\":\"0\",\"indexUrl\":\"/profile/upload/2024/02/04/e91784e6b00d5c03c09f16a826f869f7_20240204164628A003.jpeg\",\"kucunNum\":9999,\"name\":\"西安兵马俑\",\"params\":{},\"price\":150,\"remark\":\"兵马俑，即秦始皇陵兵马俑，亦简称秦兵马俑或秦俑，是第一批全国重点文物保护单位、第一批中国世界遗产，位于今陕西省西安市临潼区秦始皇陵以东1.5千米处的兵马俑坑内。先后有200多位外国元首和政府首脑参观访问，成为中国古代辉煌文明的一张金字名片，又被誉为世界十大古墓稀世珍宝之一。\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:47:31');
-INSERT INTO `sys_oper_log` VALUES (8, '景区表', 1, 'com.tourism.abuwx.controller.VxJingdianTableController.add()', 'POST', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"0\",\"createTime\":\"2024-02-04T16:51:39.774+08:00\",\"dznum\":\"0\",\"indexUrl\":\"/profile/upload/2024/02/04/bdc051b6804722fb0948d85419832002_20240204164932A004.jpg\",\"kucunNum\":9999,\"name\":\"黄帝陵\",\"params\":{},\"price\":91,\"remark\":\"黄帝陵古称“桥陵”，是历代帝王和名人祭祀黄帝的场所。历史上最早举行黄帝祭祀始于秦灵公三年（前422年），秦灵公“作吴阳上畤，专祭黄帝”。自汉武帝元封元年（前110年）亲率十八万大军祭祀黄帝陵以来，桥山一直是历代王朝举行国家大祭之地 ，保存着汉代至今的各类文物。陵前的“黄帝手植柏”距今五千余年，相传为黄帝亲手所植，是世界上最古老的柏树。\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:51:39');
-INSERT INTO `sys_oper_log` VALUES (9, '轮播图管理', 2, 'com.tourism.abuwx.controller.AbucoderBannersController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/banners', '127.0.0.1', '内网IP', '{\"bannerImg\":\"/profile/upload/2024/02/04/741e2f1bfb49270153a62b4abb88b219_20240204165244A005.jpg\",\"bannerTitle\":\"轮播图1\",\"bannerUrl\":\"\",\"createBy\":\"\",\"createTime\":\"2022-05-27 15:53:57\",\"id\":1,\"params\":{},\"remark\":\"\",\"updateBy\":\"\",\"updateTime\":\"2024-02-04T16:52:46.45+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:52:46');
-INSERT INTO `sys_oper_log` VALUES (10, '轮播图管理', 2, 'com.tourism.abuwx.controller.AbucoderBannersController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/banners', '127.0.0.1', '内网IP', '{\"bannerImg\":\"/profile/upload/2024/02/04/bdc051b6804722fb0948d85419832002_20240204165258A007.jpg\",\"bannerTitle\":\"轮播图2\",\"createBy\":\"\",\"createTime\":\"2024-01-26 17:07:55\",\"id\":3,\"params\":{},\"updateBy\":\"\",\"updateTime\":\"2024-02-04T16:53:00.771+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:53:00');
-INSERT INTO `sys_oper_log` VALUES (11, '轮播图管理', 1, 'com.tourism.abuwx.controller.AbucoderBannersController.add()', 'POST', 1, 'admin', NULL, '/abuwx/banners', '127.0.0.1', '内网IP', '{\"bannerImg\":\"/profile/upload/2024/02/04/7738-2301051AT12_20240204165337A009.jpg\",\"bannerTitle\":\"轮播图3\",\"createTime\":\"2024-02-04T16:53:40.171+08:00\",\"id\":4,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:53:40');
-INSERT INTO `sys_oper_log` VALUES (12, '订单', 3, 'com.tourism.abuwx.controller.OrderTableController.remove()', 'DELETE', 1, 'admin', NULL, '/abuwx/orderTabel/1', '127.0.0.1', '内网IP', '{ids=1}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:54:01');
-INSERT INTO `sys_oper_log` VALUES (13, '订单', 3, 'com.tourism.abuwx.controller.OrderTableController.remove()', 'DELETE', 1, 'admin', NULL, '/abuwx/orderTabel/2', '127.0.0.1', '内网IP', '{ids=2}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:54:03');
-INSERT INTO `sys_oper_log` VALUES (14, '轮播图管理', 2, 'com.tourism.abuwx.controller.AbucoderBannersController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/banners', '127.0.0.1', '内网IP', '{\"bannerImg\":\"/profile/upload/2024/02/04/d3b49aca11872f888da6e613024d5dbd_20240204165536A010.jpeg\",\"bannerTitle\":\"轮播图1\",\"bannerUrl\":\"\",\"createBy\":\"\",\"createTime\":\"2022-05-27 15:53:57\",\"id\":1,\"params\":{},\"remark\":\"\",\"updateBy\":\"\",\"updateTime\":\"2024-02-04T16:55:38.104+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:55:38');
-INSERT INTO `sys_oper_log` VALUES (15, '轮播图管理', 2, 'com.tourism.abuwx.controller.AbucoderBannersController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/banners', '127.0.0.1', '内网IP', '{\"bannerImg\":\"/profile/upload/2024/02/04/ee0385acdbab198dc94ca52947865c7e_20240204165617A011.jpg\",\"bannerTitle\":\"轮播图2\",\"createBy\":\"\",\"createTime\":\"2024-01-26 17:07:55\",\"id\":3,\"params\":{},\"updateBy\":\"\",\"updateTime\":\"2024-02-04T16:56:18.785+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:56:18');
-INSERT INTO `sys_oper_log` VALUES (16, '轮播图管理', 3, 'com.tourism.abuwx.controller.AbucoderBannersController.remove()', 'DELETE', 1, 'admin', NULL, '/abuwx/banners/4', '127.0.0.1', '内网IP', '{ids=4}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:56:21');
-INSERT INTO `sys_oper_log` VALUES (17, '景区表', 2, 'com.tourism.abuwx.controller.VxJingdianTableController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/jingdianTable', '127.0.0.1', '内网IP', '{\"collectNum\":\"0\",\"createTime\":\"2024-02-04 16:47:32\",\"dznum\":\"0\",\"id\":3,\"indexUrl\":\"/profile/upload/2024/02/04/e91784e6b00d5c03c09f16a826f869f7_20240204164628A003.jpeg\",\"kucunNum\":9999,\"name\":\"西安兵马俑\",\"params\":{},\"price\":150,\"remark\":\"兵马俑，即秦始皇陵兵马俑，亦简称秦兵马俑或秦俑，是第一批全国重点文物保护单位、第一批中国世界遗产，位于今陕西省西安市临潼区秦始皇陵以东1.5千米处的兵马俑坑内。先后有200多位外国元首和政府首脑参观访问，成为中国古代辉煌文明的一张金字名片，又被誉为世界十大古墓稀世珍宝之一。\",\"updateTime\":\"2024-02-04 16:58:20\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 08:58:20');
-INSERT INTO `sys_oper_log` VALUES (18, '通知公告', 2, 'com.tourism.web.controller.system.SysNoticeController.edit()', 'PUT', 1, 'admin', NULL, '/system/notice', '127.0.0.1', '内网IP', '{\"createBy\":\"admin\",\"createTime\":\"2022-05-26 09:03:40\",\"noticeContent\":\"<p><span style=\\\"color: rgb(51, 51, 51);\\\">大唐不夜城的常规门票价格为成人90元/人，学生票为50元/人，儿童则免费入场。这些票价仅适用于白天的普通游览，允许游客参观所有景点和表演。若要在夜间游览，则需要购买夜场门票，其价格为成人120元/人，学生80元/人，儿童则是60元/人。</span></p>\",\"noticeDesc\":\"大唐不夜城门票八折出售，赶快入手吧。\",\"noticeId\":1,\"noticeTitle\":\"大唐不夜城门票打折扣\",\"noticeType\":\"2\",\"params\":{},\"remark\":\"管理员\",\"status\":\"0\",\"updateBy\":\"admin\",\"updateTime\":\"2024-02-02 10:00:33\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 09:05:26');
-INSERT INTO `sys_oper_log` VALUES (19, '通知公告', 2, 'com.tourism.web.controller.system.SysNoticeController.edit()', 'PUT', 1, 'admin', NULL, '/system/notice', '127.0.0.1', '内网IP', '{\"createBy\":\"admin\",\"createTime\":\"2022-05-26 09:03:40\",\"noticeContent\":\"<p><span style=\\\"color: rgb(51, 51, 51);\\\">大唐不夜城的常规门票价格为成人90元/人，学生票为50元/人，儿童则免费入场。这些票价仅适用于白天的普通游览，允许游客参观所有景点和表演。</span></p>\",\"noticeDesc\":\"大唐不夜城门票八折出售，赶快入手吧。\",\"noticeId\":1,\"noticeTitle\":\"大唐不夜城门票打折扣\",\"noticeType\":\"2\",\"params\":{},\"remark\":\"管理员\",\"status\":\"0\",\"updateBy\":\"admin\",\"updateTime\":\"2024-02-04 09:05:26\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 09:05:52');
-INSERT INTO `sys_oper_log` VALUES (20, '小程序配置', 2, 'com.tourism.abuwx.controller.AbucoderWxappConfigController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/wxappconfig', '127.0.0.1', '内网IP', '{\"appSecret\":\"881f703208783949f576297477c3923c\",\"appid\":\"wx2264cb8c1cd32b7e\",\"createBy\":\"\",\"createTime\":\"2022-06-28 15:01:45\",\"id\":1,\"params\":{},\"state\":0,\"updateBy\":\"\",\"updateTime\":\"2024-02-04T17:43:00.116+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 09:43:00');
-INSERT INTO `sys_oper_log` VALUES (21, '小程序配置', 2, 'com.tourism.abuwx.controller.AbucoderWxappConfigController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/wxappconfig', '127.0.0.1', '内网IP', '{\"appSecret\":\"881f703208783949f576297477c3923c\",\"appid\":\"wx2264cb8c1cd32b7e\",\"createBy\":\"\",\"createTime\":\"2022-06-28 15:01:45\",\"id\":1,\"params\":{},\"remark\":\"小程序配置\",\"state\":0,\"updateBy\":\"\",\"updateTime\":\"2024-02-04T17:43:19.063+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 09:43:19');
-INSERT INTO `sys_oper_log` VALUES (22, '小程序配置', 2, 'com.tourism.abuwx.controller.AbucoderWxappConfigController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/wxappconfig', '127.0.0.1', '内网IP', '{\"appSecret\":\"你自己的微信APP密钥\",\"appid\":\"你自己的微信小程序APPID\",\"createBy\":\"\",\"createTime\":\"2022-06-28 15:01:45\",\"id\":1,\"params\":{},\"remark\":\"小程序配置\",\"state\":0,\"updateBy\":\"\",\"updateTime\":\"2024-02-04T17:44:08.059+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-04 09:44:08');
+INSERT INTO `sys_oper_log` VALUES (1, '操作日志', 9, 'com.tourism.web.controller.monitor.SysOperlogController.clean()', 'DELETE', 1, 'admin', NULL, '/monitor/operlog/clean', '127.0.0.1', '内网IP', '{}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-12 14:45:45');
+INSERT INTO `sys_oper_log` VALUES (2, '角色管理', 2, 'com.tourism.web.controller.system.SysRoleController.changeStatus()', 'PUT', 1, 'admin', NULL, '/system/role/changeStatus', '127.0.0.1', '内网IP', '{\"admin\":true,\"deptCheckStrictly\":false,\"flag\":false,\"menuCheckStrictly\":false,\"params\":{},\"roleId\":1,\"status\":\"1\"}', NULL, 1, '不允许操作超级管理员角色', '2024-02-14 01:55:19');
+INSERT INTO `sys_oper_log` VALUES (3, '订单', 3, 'com.tourism.abuwx.controller.OrderTableController.remove()', 'DELETE', 1, 'admin', NULL, '/abuwx/orderTabel/4', '127.0.0.1', '内网IP', '{ids=4}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-14 02:29:13');
+INSERT INTO `sys_oper_log` VALUES (4, '微信用户', 2, 'com.tourism.abuwx.controller.AbucoderWxuserController.edit()', 'PUT', 1, 'admin', NULL, '/abuwx/wxuser', '127.0.0.1', '内网IP', '{\"avatar\":\"/profile/upload/2024/02/14/u_20240214105414A001.jpg\",\"createBy\":\"任先生\",\"createTime\":\"2024-01-26 16:19:52\",\"id\":9,\"nickname\":\"任先生\",\"openid\":\"oXDyn5mULcf5VYidLWhUUJlqcs8U\",\"params\":{},\"updateBy\":\"\",\"updateTime\":\"2024-02-14T10:54:15.276+08:00\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2024-02-14 02:54:15');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1072,7 +1060,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 103, 'admin', '管理员', '00', '126@163.com', '15888888888', '0', '', '$2a$10$jP/r.7y4K7FkWRabOoN/CuLxIm.PHY6eV0nmoVXtTeKpNEo30NGu.', '0', '0', '127.0.0.1', '2024-02-04 17:42:22', 'admin', '2022-06-26 08:15:27', '', '2024-02-04 09:42:22', '管理员');
+INSERT INTO `sys_user` VALUES (1, 103, 'admin', '管理员', '00', '126@163.com', '15888888888', '0', '', '$2a$10$jP/r.7y4K7FkWRabOoN/CuLxIm.PHY6eV0nmoVXtTeKpNEo30NGu.', '0', '0', '127.0.0.1', '2024-02-14 12:27:08', 'admin', '2022-06-26 08:15:27', '', '2024-02-14 04:27:07', '管理员');
 INSERT INTO `sys_user` VALUES (100, NULL, 'testcommon', '测试普通用户', '00', '1984468885@qq.com', '18289486155', '0', '', '$2a$10$jP/r.7y4K7FkWRabOoN/CuLxIm.PHY6eV0nmoVXtTeKpNEo30NGu.', '0', '2', '127.0.0.1', '2024-01-29 14:58:33', 'admin', '2024-01-26 10:01:03', '', '2024-01-29 06:58:33', NULL);
 
 -- ----------------------------
@@ -1119,5 +1107,6 @@ CREATE TABLE `wxuser_collent`  (
 -- Records of wxuser_collent
 -- ----------------------------
 INSERT INTO `wxuser_collent` VALUES (9, 1);
+INSERT INTO `wxuser_collent` VALUES (9, 3);
 
 SET FOREIGN_KEY_CHECKS = 1;
