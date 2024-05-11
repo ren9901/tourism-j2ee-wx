@@ -41,7 +41,7 @@
 					<view class="text">系统通知</view>
 					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
 				</view>
-				<view class="li noborder">
+				<view class="li noborder" @click="sysTest">
 					<u-icon class="icon" name="setting-fill" size="25" color="#757575"></u-icon>
 					<view class="text">系统设置</view>
 					<u-icon class="icon" name="arrow-right" size="20" color="#757575"></u-icon>
@@ -68,7 +68,7 @@
 	export default {
 		data() {
 			return {
-				avatarUrl: 'https://portrait.gitee.com/uploads/avatars/user/354/1062657_rahman_1649233036.png!avatar60',
+				avatarUrl: 'https://mall-rxs.oss-cn-shenzhen.aliyuncs.com/2024/02/%E7%94%A8%E6%88%B7.png',
 				userinfo: {},
 				islogin:false,
 			}
@@ -137,6 +137,13 @@
 					})
 				}
 				
+			},
+			sysTest(){
+				uni.showToast({
+					icon: "none",
+					title: "系统设置！",
+					duration: 2000
+				})
 			},
 			gotoMyOrder(){
 				if(uni.getStorageSync("userinfo")!=''){

@@ -20,11 +20,11 @@ const app = new Vue({
 })
 let adlist = [
 	{
-		bannerAd: 'adunit-3187490d80ba92ca',//Banner广告
-		gridAd:   'adunit-26da28df208c002c',//原生广告
-		videoAd:  'adunit-e3777ebcaaad92af',//视频广告
-		awardAd:  'adunit-c6b420834b40ddbb',//激励式广告
-		plaqueAd: 'adunit-67e3b026600b6582',//插屏广告
+		bannerAd: 'adunit-3187490d80ba92ca',
+		gridAd:   'adunit-26da28df208c002c',
+		videoAd:  'adunit-e3777ebcaaad92af',
+		awardAd:  'adunit-c6b420834b40ddbb',
+		plaqueAd: 'adunit-67e3b026600b6582',
 	}
 ]
 function myad(){
