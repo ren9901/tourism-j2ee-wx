@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-22T06:58:30.409Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="h_iCkUbDyXbAj935010Y" version="24.7.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-22T07:09:31.076Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="rceYnZk7sYgGqpkXnhtr" version="24.7.1" type="github">
   <diagram name="Page-1" id="12e1b939-464a-85fe-373e-61e167be1490">
     <mxGraphModel dx="1750" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
@@ -28,22 +28,22 @@
             <mxPoint x="1440" y="880" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-6" value="&lt;h2 style=&quot;font-size: 21px;&quot;&gt;数据大屏展示&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-6" value="&lt;pre style=&quot;font-size: 21px;&quot;&gt;数据大屏展示&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="560" y="580" width="390" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-7" value="&lt;h2 style=&quot;font-size: 21px;&quot;&gt;调控管理&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-7" value="&lt;pre style=&quot;font-size: 21px;&quot;&gt;调控管理&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="1010" y="580" width="390" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-8" value="&lt;h2 style=&quot;font-size: 21px;&quot;&gt;数据配置&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-8" value="&lt;pre style=&quot;font-size: 21px;&quot;&gt;数据配置&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="560" y="680" width="390" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-9" value="&lt;h2 style=&quot;font-size: 21px;&quot;&gt;系统管理&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-9" value="&lt;pre style=&quot;font-size: 21px;&quot;&gt;系统管理&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="1010" y="680" width="390" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-10" value="&lt;h2 style=&quot;text-indent:24.0pt;mso-list:l0 level3 lfo1&quot;&gt;&lt;a name=&quot;_Toc10984&quot;&gt;&lt;span style=&quot;font-family:宋体;mso-ascii-font-family:&lt;br/&gt;&amp;quot;Times New Roman&amp;quot;;mso-hansi-font-family:&amp;quot;Times New Roman&amp;quot;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;直连直通整站调控规则&lt;/font&gt;&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-10" value="&lt;pre style=&quot;text-indent:24.0pt;mso-list:l0 level3 lfo1&quot;&gt;&lt;a name=&quot;_Toc10984&quot;&gt;&lt;span style=&quot;font-family:宋体;mso-ascii-font-family:&lt;br/&gt;&amp;quot;Times New Roman&amp;quot;;mso-hansi-font-family:&amp;quot;Times New Roman&amp;quot;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;直连直通整站调控规则&lt;/font&gt;&lt;/span&gt;&lt;/a&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="560" y="780" width="390" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GmhpfA-KI1yeRrbkVghF-11" value="&lt;h2&gt;&lt;span style=&quot;line-height: 150%; font-family: 宋体; font-size: 21px;&quot;&gt;策略管理流程&lt;/span&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+        <mxCell id="GmhpfA-KI1yeRrbkVghF-11" value="&lt;pre&gt;&lt;span style=&quot;line-height: 150%; font-family: 宋体; font-size: 21px;&quot;&gt;策略管理流程&lt;/span&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
           <mxGeometry x="1010" y="780" width="390" height="60" as="geometry" />
         </mxCell>
       </root>
